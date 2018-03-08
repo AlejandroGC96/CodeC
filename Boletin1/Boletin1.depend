@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1520427321 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"viajes.h"
+	"alta.h"
+	"menu.h"
+	"buscar.h"
+	"baja.h"
+	"guardar.h"
+
+1519125957 c:\users\alex_\documents\c\fup2\ficheros\boletin1\menu.h
+
+1519206403 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1520428288 c:\users\alex_\documents\c\fup2\ficheros\boletin1\clientes.h
+	"viajes.h"
+
+1520428576 c:\users\alex_\documents\c\fup2\ficheros\boletin1\viajes.h
+
+1520427300 c:\users\alex_\documents\c\fup2\ficheros\boletin1\alta.h
+
+1519162075 c:\users\alex_\documents\c\fup2\ficheros\boletin1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"clientes.h"
+	"viajes.h"
+	"alta.h"
+
+1520429266 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\alta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alta.h"
+	"clientes.h"
+	"buscar.h"
+	<time.h>
+
+1520428306 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\buscar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"alta.h"
+
+1519302938 c:\users\alex_\documents\c\fup2\ficheros\boletin1\buscar.h
+
+1520358031 c:\users\alex_\documents\c\fup2\ficheros\boletin1\baja.h
+
+1520503691 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\baja.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"buscar.h"
+
+1520360840 source:c:\users\alex_\documents\c\fup2\ficheros\boletin1\guardar.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1520359755 c:\users\alex_\documents\c\fup2\ficheros\boletin1\guardar.h
+
