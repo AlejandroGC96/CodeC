@@ -38,10 +38,11 @@ void menu()
             break;
 
         case 2:
-            //tiempo();
             if( baja_clientes()==0)
             {
                 contador_clientes--;
+                system("pause");
+                system("cls");
                 break;
             }
             else
@@ -52,10 +53,15 @@ void menu()
             system("cls");
             break;
         case 4:
-
+            baja_viajes();
+            system("pause");
+            system("cls");
             break;
         case 5:
             guardar(clientes);
+
+            system("pause");
+            system("cls");
             break;
         case 6:
             cargar(clientes);

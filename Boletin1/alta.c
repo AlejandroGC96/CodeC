@@ -9,7 +9,7 @@
 
 
 
-void tiempo(char output[])
+void tiempo(char output[])//Calcula el tiempo para el id
 {
 
     time_t tiempo = time(0);
@@ -77,7 +77,7 @@ void alta_viaje()
     {
         if(i!=-1)
         {
-            tiempo(date);
+            tiempo(date);//Empieza a concatenar cadenas para el id
             strcat(dni,"_");
             char str[3];
             sprintf(str, "%d", clientes[i].contador_viajes);
@@ -134,7 +134,7 @@ void imprimir(int contador_clientes)
 
     for(; i<MAX_CLIENTES; i++)
     {
-        if(clientes[i].usuario_en_uso==1)
+        if(clientes[i].usuario_en_uso==1)//Filtra los usuarios eliminados de los que no
         {
             printf("#####Cliente %d#####\n",i+1);
             printf("%s\n",clientes[i].dni);
