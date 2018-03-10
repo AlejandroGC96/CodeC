@@ -124,3 +124,62 @@
 	"clientes.h"
 	"alta.h"
 
+1520360840 source:c:\users\alex_\documents\github\codec\boletin1\guardar.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1520428288 c:\users\alex_\documents\github\codec\boletin1\clientes.h
+	"viajes.h"
+
+1520428576 c:\users\alex_\documents\github\codec\boletin1\viajes.h
+
+1519206403 source:c:\users\alex_\documents\github\codec\boletin1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1519125957 c:\users\alex_\documents\github\codec\boletin1\menu.h
+
+1520684610 source:c:\users\alex_\documents\github\codec\boletin1\baja.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"buscar.h"
+
+1520607850 c:\users\alex_\documents\github\codec\boletin1\buscar.h
+
+1520684114 source:c:\users\alex_\documents\github\codec\boletin1\alta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alta.h"
+	"clientes.h"
+	"buscar.h"
+	<time.h>
+
+1520679176 c:\users\alex_\documents\github\codec\boletin1\alta.h
+
+1520607850 source:c:\users\alex_\documents\github\codec\boletin1\buscar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"alta.h"
+
+1520679220 source:c:\users\alex_\documents\github\codec\boletin1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"viajes.h"
+	"alta.h"
+	"menu.h"
+	"buscar.h"
+	"baja.h"
+	"guardar.h"
+
+1520684396 c:\users\alex_\documents\github\codec\boletin1\baja.h
+
+1520359755 c:\users\alex_\documents\github\codec\boletin1\guardar.h
+

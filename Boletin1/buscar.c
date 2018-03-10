@@ -21,11 +21,12 @@ int buscar_cliente(char *dni)//Return el valor de la posicion del cliente que es
 }
 
 
-int buscar_viaje(int i,char *id){
+int buscar_viaje(int i,char *id)
+{
 
-int v=0;
-char id_2[11];
-int comparacion=0;
+    int v=0;
+    char id_2[11];
+    int comparacion=0;
 
     for(v=0; v<=49; v++)
     {

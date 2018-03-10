@@ -15,25 +15,39 @@ void tiempo(char output[])//Calcula el tiempo para el id
     time_t tiempo = time(0);
     struct tm *tlocal = localtime(&tiempo);
     strftime(output,128,"%d_%m_%y",tlocal);
-    printf("%s\n",output);
 
 }
-void alta_cliente(int contador_clientes)
+int alta_cliente(int contador_clientes)
 {
+
+    char nombre_fichero[150];
+    char dni[13];
+
+    printf("Escribre el nombre del fichero que quieres introducir(nombre.txt): \n");
+    scanf("%s",nombre_fichero);
+    fflush(stdin);
 
     if(contador_clientes<20)
     {
         FILE *fichero;
 
 
-        if ((fichero = fopen("fichero1.txt", "r")) == NULL)
+        if ((fichero = fopen(nombre_fichero, "r")) == NULL)
         {
             fprintf(stderr, "No se puede abrir el fichero\n");
             exit (EXIT_FAILURE);
         }
-        fgets(clientes[contador_clientes].dni,13,fichero);
-        clientes[contador_clientes].dni[strlen(clientes[contador_clientes].dni) - 1] = '\0';
 
+
+        fgets(dni,13,fichero);
+        dni[strlen(dni) - 1]= '\0';
+        if(buscar_cliente(dni)!=-1 && clientes[buscar_cliente(dni)].usuario_en_uso==1)
+        {
+
+            printf("Ese cliente ya existe\n");
+            return 0;
+        }
+        strcpy(clientes[contador_clientes].dni,dni);
         fgets(clientes[contador_clientes].nombre,20,fichero);
         clientes[contador_clientes].nombre[strlen(clientes[contador_clientes].nombre) - 1] = '\0';
 
@@ -47,21 +61,27 @@ void alta_cliente(int contador_clientes)
 
         fclose(fichero);
         printf("El cliente se ha dado de alta con exito\n");
+        return 1;
     }
     else
 
         printf("Error.Limite de clientes excedido.\n");
-
+    return 0;
 }
 
 void alta_viaje()
 {
-
+    char nombre_fichero[150];
     FILE *fichero;
     char dni[128];
     char date[128];
     int i=0;
-    if ((fichero = fopen("fichero2.txt", "r")) == NULL)
+
+    printf("Escribre el nombre del fichero que quieres introducir(nombre.txt): \n");
+    scanf("%s",nombre_fichero);
+    fflush(stdin);
+
+    if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
         exit (EXIT_FAILURE);
@@ -85,8 +105,8 @@ void alta_viaje()
             strcat(dni,"_");
             strcat(dni,date);
             strcat(dni,"\0");
-            strcpy(clientes[i].viajes[clientes[i].contador_viajes].id, dni);
 
+            strcpy(clientes[i].viajes[clientes[i].contador_viajes].id, dni);
             fgets(clientes[i].viajes[clientes[i].contador_viajes].ciudad_destino,80,fichero);
             clientes[i].viajes[clientes[i].contador_viajes].ciudad_destino[strlen(clientes[i].viajes[clientes[i].contador_viajes].ciudad_destino) - 1] = '\0';
 

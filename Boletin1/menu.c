@@ -31,8 +31,12 @@ void menu()
         {
 
         case 1:
-            alta_cliente(contador_clientes);
-            contador_clientes++;
+
+            if(alta_cliente(contador_clientes)==1)
+            {
+
+                contador_clientes++;
+            }
             system("pause");
             system("cls");
             break;
@@ -65,6 +69,8 @@ void menu()
             break;
         case 6:
             cargar(clientes);
+            system("pause");
+            system("cls");
             break;
         case 7:
             imprimir(contador_clientes);
