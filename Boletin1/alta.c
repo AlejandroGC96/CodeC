@@ -97,6 +97,7 @@ void alta_viaje()
     {
         if(i!=-1)
         {
+
             tiempo(date);//Empieza a concatenar cadenas para el id
             strcat(dni,"_");
             char str[3];
@@ -167,13 +168,13 @@ void imprimir(int contador_clientes)
                 for(; x<clientes[i].contador_viajes; x++)
                 {
                     printf("\t####Viaje %d####\n",x+1);
-                    printf("\tID: %s\n",clientes[i].viajes[i].id);
-                    printf("\tCiudad de destino: %s\n",clientes[i].viajes[i].ciudad_destino);
-                    printf("\tHotel: %s\n",clientes[i].viajes[i].hotel);
-                    printf("\tNoches: %s\n",clientes[i].viajes[i].noches);
-                    printf("\tPrecio alejamiento: %s\n",clientes[i].viajes[i].precio_alojamiento);
-                    printf("\tTransporte: %s\n",clientes[i].viajes[i].transporte);
-                    printf("\tPrecio del desplazamiento: %s\n",clientes[i].viajes[i].precio_desplazamiento);
+                    printf("\tID: %s\n",clientes[i].viajes[x].id);
+                    printf("\tCiudad de destino: %s\n",clientes[i].viajes[x].ciudad_destino);
+                    printf("\tHotel: %s\n",clientes[i].viajes[x].hotel);
+                    printf("\tNoches: %s\n",clientes[i].viajes[x].noches);
+                    printf("\tPrecio alejamiento: %s\n",clientes[i].viajes[x].precio_alojamiento);
+                    printf("\tTransporte: %s\n",clientes[i].viajes[x].transporte);
+                    printf("\tPrecio del desplazamiento: %s\n",clientes[i].viajes[x].precio_desplazamiento);
                 }
             }
         }

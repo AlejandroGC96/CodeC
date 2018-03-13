@@ -150,7 +150,7 @@
 
 1520607850 c:\users\alex_\documents\github\codec\boletin1\buscar.h
 
-1520684114 source:c:\users\alex_\documents\github\codec\boletin1\alta.c
+1520934423 source:c:\users\alex_\documents\github\codec\boletin1\alta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -161,14 +161,14 @@
 
 1520679176 c:\users\alex_\documents\github\codec\boletin1\alta.h
 
-1520607850 source:c:\users\alex_\documents\github\codec\boletin1\buscar.c
+1520684667 source:c:\users\alex_\documents\github\codec\boletin1\buscar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"clientes.h"
 	"alta.h"
 
-1520679220 source:c:\users\alex_\documents\github\codec\boletin1\menu.c
+1520684724 source:c:\users\alex_\documents\github\codec\boletin1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"clientes.h"
