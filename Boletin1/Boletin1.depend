@@ -65,7 +65,7 @@
 
 1520359755 c:\users\alex_\documents\c\fup2\ficheros\boletin1\guardar.h
 
-1520533458 source:c:\users\alejandro\documents\github\codec\boletin1\baja.c
+1521133994 source:c:\users\alejandro\documents\github\codec\boletin1\baja.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -91,7 +91,7 @@
 
 1520525139 c:\users\alejandro\documents\github\codec\boletin1\menu.h
 
-1520527850 source:c:\users\alejandro\documents\github\codec\boletin1\menu.c
+1520684964 source:c:\users\alejandro\documents\github\codec\boletin1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"clientes.h"
@@ -102,13 +102,13 @@
 	"baja.h"
 	"guardar.h"
 
-1520525139 c:\users\alejandro\documents\github\codec\boletin1\alta.h
+1520684964 c:\users\alejandro\documents\github\codec\boletin1\alta.h
 
-1520527302 c:\users\alejandro\documents\github\codec\boletin1\baja.h
+1520684964 c:\users\alejandro\documents\github\codec\boletin1\baja.h
 
 1520525139 c:\users\alejandro\documents\github\codec\boletin1\guardar.h
 
-1520526922 source:c:\users\alejandro\documents\github\codec\boletin1\alta.c
+1521136294 source:c:\users\alejandro\documents\github\codec\boletin1\alta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -117,7 +117,7 @@
 	"buscar.h"
 	<time.h>
 
-1520533206 source:c:\users\alejandro\documents\github\codec\boletin1\buscar.c
+1520684964 source:c:\users\alejandro\documents\github\codec\boletin1\buscar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
