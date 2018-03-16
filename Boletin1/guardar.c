@@ -3,11 +3,11 @@
 #include "clientes.h"
 
 
-void guardar(cliente *clientes)
+void guardar(cliente *clientes, int contador_clientes)
 {
     FILE *fichero;
     fichero = fopen("contenido.bin", "wb");
-    fwrite(clientes, sizeof(cliente), 1, fichero);
+    fwrite(clientes, sizeof(cliente), contador_clientes, fichero);
     fclose(fichero);
     printf("Guardado\n");
 }
@@ -24,7 +24,7 @@ void cargar(cliente *clientes)
     }
     else
     {
-        fread(clientes, sizeof(cliente), 1, fichero);
+        fread(clientes, sizeof(cliente), 19, fichero);
         printf("Se ha cargado con exito\n");
     }
  fclose(fichero);

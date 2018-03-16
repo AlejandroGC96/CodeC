@@ -62,7 +62,7 @@ void menu()
             system("cls");
             break;
         case 5:
-            guardar(clientes);
+            guardar(clientes, contador_clientes);
 
             system("pause");
             system("cls");
