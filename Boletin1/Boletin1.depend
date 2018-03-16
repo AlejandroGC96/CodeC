@@ -124,7 +124,7 @@
 	"clientes.h"
 	"alta.h"
 
-1521190620 source:c:\users\alex_\documents\github\codec\boletin1\guardar.c
+1521216109 source:c:\users\alex_\documents\github\codec\boletin1\guardar.c
 	<stdio.h>
 	<stdlib.h>
 	"clientes.h"
@@ -168,7 +168,7 @@
 	"clientes.h"
 	"alta.h"
 
-1521190298 source:c:\users\alex_\documents\github\codec\boletin1\menu.c
+1521217055 source:c:\users\alex_\documents\github\codec\boletin1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"clientes.h"
@@ -181,5 +181,5 @@
 
 1520684396 c:\users\alex_\documents\github\codec\boletin1\baja.h
 
-1521190238 c:\users\alex_\documents\github\codec\boletin1\guardar.h
+1521217016 c:\users\alex_\documents\github\codec\boletin1\guardar.h
 

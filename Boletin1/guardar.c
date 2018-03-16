@@ -12,7 +12,7 @@ void guardar(cliente *clientes, int contador_clientes)
     fclose(fichero);
     printf("Guardado\n");
 }
-void cargar(cliente *clientes,int contador_clientes)
+ int cargar(cliente *clientes,int contador_clientes)
 {
 
     FILE *fichero;
@@ -22,6 +22,7 @@ void cargar(cliente *clientes,int contador_clientes)
     {
         printf("No se encuentran bases de datos\n");
         system("pause");
+        return 0;
     }
     else
     {
@@ -30,4 +31,6 @@ void cargar(cliente *clientes,int contador_clientes)
         printf("Se ha cargado con exito\n");
     }
  fclose(fichero);
+
+ return contador_clientes;
 }
