@@ -130,6 +130,7 @@ void alta_viaje()
             fclose(fichero);
 
             printf("Viaje creado con exito\n");
+            printf("El identificador del viaje es %s\n",dni);
         }
         else
             printf("El cliente asociado no existe\n");

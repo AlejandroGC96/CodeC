@@ -25,9 +25,21 @@ int baja_clientes()
 
     char dni[13];
     char opcion;
+    char nombre_fichero[150];
     int i=0;
-    printf("Introduce el DNI del usuario que quieres eliminiar\n");
-    gets(dni);
+
+     FILE *fichero;
+    printf("Escribre el nombre del fichero que quieres introducir(nombre.txt): \n");
+    scanf("%s",nombre_fichero);
+    fflush(stdin);
+
+    if ((fichero = fopen(nombre_fichero, "r")) == NULL)
+    {
+        fprintf(stderr, "No se puede abrir el fichero\n");
+        exit (EXIT_FAILURE);
+    }
+
+    fgets(dni,15,fichero);
     i=buscar_cliente(dni);
     if(i==-1)
     {
