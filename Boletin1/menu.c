@@ -68,7 +68,8 @@ void menu()
             system("cls");
             break;
         case 6:
-            cargar(clientes);
+            cargar(clientes, contador_clientes);
+            printf("contador clientes: %d", contador_clientes);
             system("pause");
             system("cls");
             break;

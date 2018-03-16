@@ -1,7 +1,7 @@
 #ifndef GUARDAR_H_INCLUDED
 #define GUARDAR_H_INCLUDED
 
-void cargar(cliente *clientes);
+void cargar(cliente *clientes, int contador_clientes);
 void guardar(cliente *clientes, int contador_clientes);
 
 
