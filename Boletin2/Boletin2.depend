@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1521187541 source:c:\users\alex_\documents\github\codec\boletin2\alta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alta.h"
+	"clientes.h"
+	"buscar.h"
+	<time.h>
+
+1520679176 c:\users\alex_\documents\github\codec\boletin2\alta.h
+
+1520428288 c:\users\alex_\documents\github\codec\boletin2\clientes.h
+	"viajes.h"
+
+1520428576 c:\users\alex_\documents\github\codec\boletin2\viajes.h
+
+1520607850 c:\users\alex_\documents\github\codec\boletin2\buscar.h
+
+1521187541 source:c:\users\alex_\documents\github\codec\boletin2\baja.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"buscar.h"
+
+1520684667 source:c:\users\alex_\documents\github\codec\boletin2\buscar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"alta.h"
+
+1521217073 source:c:\users\alex_\documents\github\codec\boletin2\guardar.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1519206403 source:c:\users\alex_\documents\github\codec\boletin2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1519125957 c:\users\alex_\documents\github\codec\boletin2\menu.h
+
+1521217100 source:c:\users\alex_\documents\github\codec\boletin2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"viajes.h"
+	"alta.h"
+	"menu.h"
+	"buscar.h"
+	"baja.h"
+	"guardar.h"
+
+1520684396 c:\users\alex_\documents\github\codec\boletin2\baja.h
+
+1521217016 c:\users\alex_\documents\github\codec\boletin2\guardar.h
+
