@@ -58,3 +58,62 @@
 
 1521217016 c:\users\alex_\documents\github\codec\boletin2\guardar.h
 
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alta.h"
+	"clientes.h"
+	"buscar.h"
+	<time.h>
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\alta.h
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\clientes.h
+	"viajes.h"
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\viajes.h
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\buscar.h
+
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"buscar.h"
+
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\buscar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"alta.h"
+
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\guardar.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\menu.h
+
+1521626491 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"viajes.h"
+	"alta.h"
+	"menu.h"
+	"buscar.h"
+	"baja.h"
+	"guardar.h"
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\baja.h
+
+1521626491 c:\users\alejandro\documents\github\codec\boletin2\guardar.h
+
