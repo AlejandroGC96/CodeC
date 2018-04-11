@@ -1,7 +1,5 @@
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
-#define MAX_CLIENTES 19
-#define MAX_VIAJES 50
 #include "viajes.h"
 
 
