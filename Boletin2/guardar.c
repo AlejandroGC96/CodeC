@@ -34,3 +34,4 @@ void guardar(cliente *clientes, int contador_clientes)
 
  return contador_clientes;
 }
+
