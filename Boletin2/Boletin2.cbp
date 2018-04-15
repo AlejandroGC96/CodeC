@@ -35,19 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="alta.h" />
-		<Unit filename="baja.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="baja.h" />
-		<Unit filename="buscar.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="buscar.h" />
-		<Unit filename="clientes.h" />
-		<Unit filename="guardar.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="guardar.h" />
+		<Unit filename="cliente.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,12 +43,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="menu.h" />
-		<Unit filename="viajes.h" />
+		<Unit filename="mostrar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mostrar.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

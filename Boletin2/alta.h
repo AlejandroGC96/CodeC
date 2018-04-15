@@ -1,9 +1,6 @@
 #ifndef ALTA_H_INCLUDED
 #define ALTA_H_INCLUDED
+#include "cliente.h"
+clientes alta_cliente(int *contador_clientes, clientes *cliente);
 
-
-int alta_cliente(int contador_clientes);
-void imprimir(int contador_clientes);
-void alta_viaje();
-void tiempo(char output[]);
 #endif // ALTA_H_INCLUDED
