@@ -7,7 +7,7 @@
 
 void menu()
 {
-    struct clientes *cliente;
+    clientes *cliente;
     cliente=malloc(sizeof(clientes));
     int contador_clientes = 0;
     int opcion=0;

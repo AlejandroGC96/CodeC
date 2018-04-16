@@ -14,8 +14,7 @@ for(;i<contador_clientes;i++){
         printf("Direccion: %s\n",cliente[i].direccion);
         printf("-----------------------\n");
 
-        return EXIT_SUCCESS;
 
 }
-        return EXIT_FAILURE;
+
 }
