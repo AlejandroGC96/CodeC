@@ -25,7 +25,7 @@ void menu()
             alta_cliente(&contador_clientes, cliente);
             break;
         case 7:
-            mostrar();
+            mostrar(contador_clientes, cliente);
             break;
         default:
             break;
