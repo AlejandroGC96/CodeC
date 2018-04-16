@@ -3,6 +3,7 @@
 #include "alta.h"
 #include "cliente.h"
 #include "mostrar.h"
+#include "mostrar.h"
 
 
 void menu()
@@ -17,7 +18,7 @@ void menu()
         printf("1.Dar de alta un cliente.\n");
         printf("2.Dar de baja a un cliente\n");
         printf("3.Dar de alta un viaje\n");
-        printf("4.Dar de baja a un viaje");
+        printf("4.Dar de baja a un viaje\n");
         printf("7.Mostrar datos de la agencia.\n");
         printf("8.Salir.\n");
         scanf("%d",&opcion);
@@ -26,8 +27,13 @@ void menu()
         {
         case 1:
             cliente = alta_cliente(&contador_clientes, cliente);
+            ordenar(cliente, contador_clientes);
             break;
         case 2:
+            break;
+        case 3:
+            break;
+        case 4:
             break;
         case 7:
             mostrar(contador_clientes, cliente);

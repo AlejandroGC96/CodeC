@@ -80,3 +80,53 @@
 	"cliente.h"
 	"alta.h"
 
+1523725016 source:c:\users\alejandro\documents\github\codec\boletin2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1523724999 c:\users\alejandro\documents\github\codec\boletin2\menu.h
+
+1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+	"menu.h"
+	"buscar.h"
+
+1523730760 c:\users\alejandro\documents\github\codec\boletin2\cliente.h
+
+1523912201 c:\users\alejandro\documents\github\codec\boletin2\buscar.h
+
+1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\buscar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"alta.h"
+
+1523912201 c:\users\alejandro\documents\github\codec\boletin2\alta.h
+	"cliente.h"
+
+1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\mostrar.c
+	<stdio.h>
+	<stdlib.h>
+	"cliente.h"
+
+1523914969 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"alta.h"
+	"cliente.h"
+	"mostrar.h"
+	"mostrar.h"
+
+1523914484 c:\users\alejandro\documents\github\codec\boletin2\mostrar.h
+
+1523914918 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"alta.h"
+
