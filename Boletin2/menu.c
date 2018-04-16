@@ -22,7 +22,7 @@ void menu()
         switch(opcion)
         {
         case 1:
-            alta_cliente(&contador_clientes, cliente);
+            cliente = alta_cliente(&contador_clientes, cliente);
             break;
         case 7:
             mostrar(contador_clientes, cliente);

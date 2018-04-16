@@ -4,7 +4,7 @@
 #include "menu.h"
 #include "buscar.h"
 
-void alta_cliente(int *contador_clientes, clientes *cliente)
+clientes *alta_cliente(int *contador_clientes, clientes *cliente)
 {
 
     clientes cliente_actual;
@@ -37,12 +37,13 @@ void alta_cliente(int *contador_clientes, clientes *cliente)
     {
         if(contador !=0 )
         {
+            cliente=realloc(cliente,(contador+1)*sizeof(clientes));
             i=ordenar(cliente_actual.apellidos, cliente, contador);
-            cliente[i]=cliente_actual;
+            cliente[1]=cliente_actual;
             contador++;
             *contador_clientes=contador;
             printf("El cliente %s se añadio correctamente al sistema\n", cliente_actual.nombre);
-            return EXIT_SUCCESS;
+            return cliente;
         }
         else
         {
@@ -50,7 +51,8 @@ void alta_cliente(int *contador_clientes, clientes *cliente)
             contador++;
             *contador_clientes=contador;
             printf("El cliente %s se añadio correctamente al sistema\n", cliente_actual.nombre);
-            return EXIT_SUCCESS;
+
+            return cliente;
 
         }
     }

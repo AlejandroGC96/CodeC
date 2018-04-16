@@ -12,7 +12,7 @@ int j=0;
                     {
                         if(strcmp(cliente[i].apellidos,apellidos)>0)
                         {
-                            for(j=contador; j>i; j--)
+                            for(j=contador; j>=i; j--)
                                 cliente[j]=cliente[j-1];
 
                             return i;
