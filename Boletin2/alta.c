@@ -9,7 +9,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
 
     clientes cliente_actual;
     char *nombre_fichero;
-    int i=0;
+    //int i=0;
     int contador=*contador_clientes;
     nombre_fichero=malloc(250*sizeof(char));
     printf("Vamos a dar de alta a un cliente.\n");
@@ -38,8 +38,8 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
         if(contador !=0 )
         {
             cliente=realloc(cliente,(contador+1)*sizeof(clientes));
-            i=ordenar(cliente_actual.apellidos, cliente, contador);
-            cliente[1]=cliente_actual;
+            //i=ordenar(cliente_actual.apellidos, cliente, contador);
+          //  cliente[i]=cliente_actual;
             contador++;
             *contador_clientes=contador;
             printf("El cliente %s se añadio correctamente al sistema\n", cliente_actual.nombre);
@@ -50,7 +50,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
             cliente[contador]=cliente_actual;
             contador++;
             *contador_clientes=contador;
-            printf("El cliente %s se añadio correctamente al sistema\n", cliente_actual.nombre);
+            printf("El cliente %s se a%cadio correctamente al sistema\n", cliente_actual.nombre,-92);
 
             return cliente;
 
@@ -58,5 +58,5 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     }
     else
         printf("El cliente ya existe en el sistema\n");
-
+    return EXIT_FAILURE;
 }

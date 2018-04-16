@@ -38,26 +38,26 @@
 
 1523866639 c:\users\alex_\documents\github\codec\boletin2\menu.h
 
-1523894036 source:c:\users\alex_\documents\github\codec\boletin2\menu.c
+1523900810 source:c:\users\alex_\documents\github\codec\boletin2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"alta.h"
 	"cliente.h"
 	"mostrar.h"
 
-1523894036 c:\users\alex_\documents\github\codec\boletin2\alta.h
+1523900927 c:\users\alex_\documents\github\codec\boletin2\alta.h
 	"cliente.h"
 
 1523866639 c:\users\alex_\documents\github\codec\boletin2\cliente.h
 
 1523875696 c:\users\alex_\documents\github\codec\boletin2\mostrar.h
 
-1523893346 source:c:\users\alex_\documents\github\codec\boletin2\mostrar.c
+1523895439 source:c:\users\alex_\documents\github\codec\boletin2\mostrar.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
 
-1523894036 source:c:\users\alex_\documents\github\codec\boletin2\alta.c
+1523900844 source:c:\users\alex_\documents\github\codec\boletin2\alta.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
