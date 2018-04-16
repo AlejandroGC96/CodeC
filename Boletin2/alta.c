@@ -39,7 +39,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
         {
             cliente=realloc(cliente,(contador+1)*sizeof(clientes));
             //i=ordenar(cliente_actual.apellidos, cliente, contador);
-          //  cliente[i]=cliente_actual;
+            cliente[contador]=cliente_actual;
             contador++;
             *contador_clientes=contador;
             printf("El cliente %s se añadio correctamente al sistema\n", cliente_actual.nombre);
