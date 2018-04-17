@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "cliente.h"
 #include "viajes.h"
 #include "menu.h"
@@ -36,13 +37,15 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     cliente_actual.nombre = malloc(150*sizeof(char));
     cliente_actual.apellidos = malloc(150*sizeof(char));
     cliente_actual.direccion = malloc(150*sizeof(char));
-    cliente_actual.contador_de_viajes = malloc(sizeof(int));
-    cliente_actual.viajes=malloc(sizeof(int));
+    cliente_actual.viajes=malloc(sizeof(viaje));
 
-    fscanf(fichero,"%s",cliente_actual.dni);
-    fscanf(fichero,"%s",cliente_actual.nombre);
-    fscanf(fichero,"%s",cliente_actual.apellidos);
-    fscanf(fichero,"%s",cliente_actual.direccion);
+    fgets(cliente_actual.dni,150,fichero);
+    cliente_actual.dni[strlen(cliente_actual.dni) - 1] = '\0';
+    fgets(cliente_actual.nombre,150,fichero);
+    cliente_actual.nombre[strlen(cliente_actual.nombre) - 1] = '\0';
+    fgets(cliente_actual.apellidos,150,fichero);
+    cliente_actual.apellidos[strlen(cliente_actual.apellidos) - 1] = '\0';
+    fgets(cliente_actual.direccion,150,fichero);
     fclose(fichero);
 
     if(buscar_cliente(cliente_actual.dni, contador, cliente)==-1)
@@ -112,7 +115,9 @@ if(i==-1){
     return EXIT_FAILURE;
 
 }else {
-
+if((cliente[i].contador_de_viajes > 0)){
+    cliente[i].viajes = realloc(cliente[i].viajes,(cliente[i].contador_de_viajes+1)*sizeof(viaje));
+}
 cliente[i].viajes[cliente[i].contador_de_viajes].id = malloc(150*sizeof(char));
 cliente[i].viajes[cliente[i].contador_de_viajes].noches = malloc(150*sizeof(char));
 cliente[i].viajes[cliente[i].contador_de_viajes].hotel = malloc(150*sizeof(char));

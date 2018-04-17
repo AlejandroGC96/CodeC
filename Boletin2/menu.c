@@ -28,16 +28,23 @@ void menu()
         case 1:
             cliente = alta_cliente(&contador_clientes, cliente);
             ordenar(cliente, contador_clientes);
+            system("pause");
+            system("cls");
             break;
         case 2:
             break;
         case 3:
             cliente = alta_viaje(contador_clientes, cliente);
+            system("pause");
+            system("cls");
+
             break;
         case 4:
             break;
         case 7:
             mostrar(contador_clientes, cliente);
+            system("pause");
+            system("cls");
             break;
         default:
             break;
