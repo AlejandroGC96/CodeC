@@ -20,18 +20,18 @@ int buscar_cliente(char *dni, int contador, clientes *cliente)//Return el valor 
     return -1;
 }
 
-/*
-int buscar_viaje(int i,char *id)
+
+int buscar_viaje(int i,char *id,clientes *cliente)
 {
 
     int v=0;
-    char id_2[11];
+    char *id_2;
     int comparacion=0;
-
-    for(v=0; v<49; v++)
+    id_2=malloc(150*sizeof(char));
+    for(v=0; v<cliente[i].contador_de_viajes; v++)
     {
 
-        strncpy(id_2,clientes[i].viajes[v].id,11);
+        strncpy(id_2,cliente[i].viajes[v].id,11);
 
         comparacion=strcmp(id,id_2);
         if( comparacion == 0)
@@ -43,4 +43,4 @@ int buscar_viaje(int i,char *id)
     return -1;
 }
 
-*/
+

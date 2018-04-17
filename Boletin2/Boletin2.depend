@@ -92,43 +92,48 @@
 
 1523724999 c:\users\alejandro\documents\github\codec\boletin2\menu.h
 
-1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
+1523983139 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<time.h>
 	"cliente.h"
+	"viajes.h"
 	"menu.h"
 	"buscar.h"
 
-1523730760 c:\users\alejandro\documents\github\codec\boletin2\cliente.h
+1523979429 c:\users\alejandro\documents\github\codec\boletin2\cliente.h
+	"viajes.h"
 
-1523912201 c:\users\alejandro\documents\github\codec\boletin2\buscar.h
+1523983437 c:\users\alejandro\documents\github\codec\boletin2\buscar.h
 
-1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\buscar.c
+1523984981 source:c:\users\alejandro\documents\github\codec\boletin2\buscar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"cliente.h"
 	"alta.h"
 
-1523912201 c:\users\alejandro\documents\github\codec\boletin2\alta.h
+1523979429 c:\users\alejandro\documents\github\codec\boletin2\alta.h
 	"cliente.h"
 
-1523912201 source:c:\users\alejandro\documents\github\codec\boletin2\mostrar.c
+1523979429 source:c:\users\alejandro\documents\github\codec\boletin2\mostrar.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
 
-1523914969 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
+1523983716 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"alta.h"
 	"cliente.h"
 	"mostrar.h"
-	"mostrar.h"
+	"ordenar.h"
+	"baja.h"
 
 1523914484 c:\users\alejandro\documents\github\codec\boletin2\mostrar.h
 
-1523914918 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
+1523979429 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -138,4 +143,17 @@
 1523952867 c:\users\alex_\documents\github\codec\boletin2\viajes.h
 
 1523952136 c:\users\alex_\documents\github\codec\boletin2\ordenar.h
+
+1523979429 c:\users\alejandro\documents\github\codec\boletin2\viajes.h
+
+1523914636 c:\users\alejandro\documents\github\codec\boletin2\ordenar.h
+
+1523983769 c:\users\alejandro\documents\github\codec\boletin2\baja.h
+
+1523984482 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+	"buscar.h"
 

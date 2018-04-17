@@ -4,7 +4,7 @@
 #include "cliente.h"
 #include "mostrar.h"
 #include "ordenar.h"
-
+#include "baja.h"
 
 void menu()
 {
@@ -40,6 +40,10 @@ void menu()
 
             break;
         case 4:
+            cliente = baja_viajes(contador_clientes, cliente);
+            system("pause");
+            system("cls");
+
             break;
         case 7:
             mostrar(contador_clientes, cliente);

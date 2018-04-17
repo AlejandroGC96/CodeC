@@ -37,7 +37,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     cliente_actual.nombre = malloc(150*sizeof(char));
     cliente_actual.apellidos = malloc(150*sizeof(char));
     cliente_actual.direccion = malloc(150*sizeof(char));
-    cliente_actual.viajes=malloc(sizeof(viaje));
+
 
     fgets(cliente_actual.dni,150,fichero);
     cliente_actual.dni[strlen(cliente_actual.dni) - 1] = '\0';
@@ -75,7 +75,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     }
     else
         printf("El cliente ya existe en el sistema\n");
-    return EXIT_FAILURE;
+    exit (EXIT_FAILURE);;
 }
 
 clientes *alta_viaje(int contador_clientes,clientes *cliente){
@@ -112,11 +112,14 @@ i=buscar_cliente(dni,contador_clientes, cliente);
 if(i==-1){
     fclose(fichero);
     printf("El cliente no existe.No se ha podido insertar el funcion\n");
-    return EXIT_FAILURE;
+     exit (EXIT_FAILURE);
 
 }else {
 if((cliente[i].contador_de_viajes > 0)){
     cliente[i].viajes = realloc(cliente[i].viajes,(cliente[i].contador_de_viajes+1)*sizeof(viaje));
+}
+if((cliente[i].contador_de_viajes == 0)){
+    cliente[i].viajes = malloc(sizeof(viaje));
 }
 cliente[i].viajes[cliente[i].contador_de_viajes].id = malloc(150*sizeof(char));
 cliente[i].viajes[cliente[i].contador_de_viajes].noches = malloc(150*sizeof(char));
