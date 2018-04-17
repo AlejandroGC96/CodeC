@@ -122,7 +122,7 @@
 	<stdlib.h>
 	"cliente.h"
 
-1523983716 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
+1523993533 source:c:\users\alejandro\documents\github\codec\boletin2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"alta.h"
@@ -133,7 +133,7 @@
 
 1523914484 c:\users\alejandro\documents\github\codec\boletin2\mostrar.h
 
-1523989769 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
+1523989891 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -148,9 +148,9 @@
 
 1523989724 c:\users\alejandro\documents\github\codec\boletin2\ordenar.h
 
-1523983769 c:\users\alejandro\documents\github\codec\boletin2\baja.h
+1523993369 c:\users\alejandro\documents\github\codec\boletin2\baja.h
 
-1523989791 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
+1523994022 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

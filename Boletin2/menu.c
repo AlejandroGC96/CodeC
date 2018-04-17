@@ -19,8 +19,8 @@ void menu()
         printf("2.Dar de baja a un cliente\n");
         printf("3.Dar de alta un viaje\n");
         printf("4.Dar de baja a un viaje\n");
-        printf("7.Mostrar datos de la agencia.\n");
-        printf("8.Salir.\n");
+        printf("5.Mostrar datos de la agencia.\n");
+        printf("6.Salir.\n");
         scanf("%d",&opcion);
         fflush(stdin);
         switch(opcion)
@@ -32,6 +32,10 @@ void menu()
             system("cls");
             break;
         case 2:
+            cliente = baja_clientes(&contador_clientes, cliente);
+            system("pause");
+            system("cls");
+
             break;
         case 3:
             cliente = alta_viaje(contador_clientes, cliente);
@@ -45,7 +49,7 @@ void menu()
             system("cls");
 
             break;
-        case 7:
+        case 5:
             mostrar(contador_clientes, cliente);
             system("pause");
             system("cls");
@@ -59,5 +63,5 @@ void menu()
 
         }
     }
-    while(opcion!=8);
+    while(opcion!=6);
 }

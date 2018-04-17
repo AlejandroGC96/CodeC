@@ -5,32 +5,19 @@
 #include "buscar.h"
 #include "ordenar.h"
 
-/*void baja_viajes2(int i) //Da de baja a los viajes del cliente eliminando el cliente
-{
-    int v=0;
-    for(; v<=49; v++)
-    {
-        strcpy(clientes[i].viajes[v].id,"/0");
-        strcpy(clientes[i].viajes[v].hotel,"/0");
-        strcpy(clientes[i].viajes[v].ciudad_destino,"/0");
-        strcpy(clientes[i].viajes[v].noches,"/0");
-        strcpy(clientes[i].viajes[v].precio_alojamiento,"/0");
-        strcpy(clientes[i].viajes[v].precio_desplazamiento,"/0");
-        strcpy(clientes[i].viajes[v].transporte,"/0");
-    }
 
-
-}*/
-/*
-int baja_clientes()
+clientes* baja_clientes(int *contador_clientes, clientes *cliente)
 {
 
-    char dni[13];
+    char *dni;
     char opcion;
-    char nombre_fichero[150];
+    char *nombre_fichero;
+    int contador=*contador_clientes;
     int i=0;
-
-     FILE *fichero;
+    int v=0;
+    dni = malloc(150*sizeof(char));
+    nombre_fichero = malloc(150*sizeof(char));
+    FILE *fichero;
     printf("Escribre el nombre del fichero que quieres introducir(nombre.txt): \n");
     scanf("%s",nombre_fichero);
     fflush(stdin);
@@ -42,34 +29,56 @@ int baja_clientes()
     }
 
     fgets(dni,15,fichero);
-    i=buscar_cliente(dni);
+    i=buscar_cliente(dni, contador_clientes, cliente);
     if(i==-1)
     {
         printf("No existe el usuario\n");
-        return 1;
+        exit (EXIT_FAILURE);;
     }
-    if(clientes[i].contador_viajes>0)
+    if(cliente[i].contador_de_viajes>0)
     {
-        printf("El cliente %s tiene viajes en su cuenta, si los elimina seran borrados\n",clientes[i].nombre);
+        printf("El cliente %s tiene viajes en su cuenta, si los elimina seran borrados\n",cliente[i].nombre);
 
     }
-    printf("El cliente con nombre: %s sera eliminado. Continuar? s/n\n",clientes[i].nombre);
+    printf("El cliente con nombre: %s sera eliminado. Continuar? s/n\n",cliente[i].nombre);
     opcion=getc(stdin);
     if(opcion!='n')
     {
-        clientes[i].usuario_en_uso=0;
-        clientes[i].contador_viajes=0;
-        baja_viajes2(i);
+          int v=0;
+    for(; v<cliente[i].contador_de_viajes; v++)
+    {
+            free(cliente[i].viajes[v].id);//Liberamos memoria
+            free(cliente[i].viajes[v].hotel);
+            free(cliente[i].viajes[v].ciudad_destino);
+            free(cliente[i].viajes[v].noches);
+            free(cliente[i].viajes[v].precio_alojamiento);
+            free(cliente[i].viajes[v].precio_desplazamiento);
+            free(cliente[i].viajes[v].transporte);
+
+    }
+
+            free(cliente[i].dni);//Liberamos memoria
+            free(cliente[i].nombre);
+            free(cliente[i].apellidos);
+            free(cliente[i].direccion);
+            free(cliente[i].viajes);
+            for(v=i; v<contador-1; v++) //Desplaza posiciones despues de haber borrado el que buscamos
+                {
+                    swap(&cliente[v], &cliente[v+1]);
+                }
+            contador--;
+            *contador_clientes=contador;
+            cliente=realloc(cliente, contador*sizeof(clientes));
         printf("Usuario eliminado\n");
-        return 0;
+        return cliente;
     }
     else
         printf("Operacion cancelada. Saliendo.......\n");
-    return 1;
+     exit (EXIT_FAILURE);
 
 }
 
-*/
+
 
 clientes* baja_viajes(int contador_clientes, clientes *cliente)
 {
@@ -117,7 +126,7 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
         {
             printf("El viaje asignado no existe\n");
 
-             exit (EXIT_FAILURE);
+            exit (EXIT_FAILURE);
 
 
         }
@@ -130,21 +139,25 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
             free(cliente[i].viajes[v].precio_alojamiento);
             free(cliente[i].viajes[v].precio_desplazamiento);
             free(cliente[i].viajes[v].transporte);
-            if(cliente[i].contador_de_viajes>1){
+            if(cliente[i].contador_de_viajes>1)
+            {
 
-                for(;v<cliente[i].contador_de_viajes-1;v++){//Desplaza posiciones en el array despues de haber borrado el que buscamos
-                        swap2(&cliente[i].viajes[v], &cliente[i].viajes[v+1]);
+                for(; v<cliente[i].contador_de_viajes-1; v++) //Desplaza posiciones en el array despues de haber borrado el que buscamos
+                {
+                    swap2(&cliente[i].viajes[v], &cliente[i].viajes[v+1]);
                 }
                 cliente[i].contador_de_viajes--;
                 printf("Viaje borrado\n");
                 cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(viaje));
                 return cliente;
-            }else{
+            }
+            else
+            {
 
-            cliente[i].contador_de_viajes--;
-            cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(viaje));
-            printf("Viaje borrado\n");
-            return cliente;
+                cliente[i].contador_de_viajes--;
+                cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(viaje));
+                printf("Viaje borrado\n");
+                return cliente;
             }
         }
 
