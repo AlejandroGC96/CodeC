@@ -10,6 +10,12 @@ void swap(clientes *xp, clientes *yp)
     *xp = *yp;
     *yp = temp;
 }
+void swap2(viaje *xp, viaje *yp)
+{
+    viaje temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 void bubbleSort(clientes *cliente, int n)
 {
    int i, j;
@@ -21,8 +27,6 @@ void bubbleSort(clientes *cliente, int n)
               swap(&cliente[j], &cliente[j+1]);
 }
 
-
-// Driver program to test above functions
 
 int ordenar(clientes *cliente, int contador){
 

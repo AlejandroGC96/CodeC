@@ -92,7 +92,7 @@
 
 1523724999 c:\users\alejandro\documents\github\codec\boletin2\menu.h
 
-1523983139 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
+1523986283 source:c:\users\alejandro\documents\github\codec\boletin2\alta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -117,7 +117,7 @@
 1523979429 c:\users\alejandro\documents\github\codec\boletin2\alta.h
 	"cliente.h"
 
-1523979429 source:c:\users\alejandro\documents\github\codec\boletin2\mostrar.c
+1523989538 source:c:\users\alejandro\documents\github\codec\boletin2\mostrar.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
@@ -133,7 +133,7 @@
 
 1523914484 c:\users\alejandro\documents\github\codec\boletin2\mostrar.h
 
-1523979429 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
+1523989769 source:c:\users\alejandro\documents\github\codec\boletin2\ordenar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -146,14 +146,15 @@
 
 1523979429 c:\users\alejandro\documents\github\codec\boletin2\viajes.h
 
-1523914636 c:\users\alejandro\documents\github\codec\boletin2\ordenar.h
+1523989724 c:\users\alejandro\documents\github\codec\boletin2\ordenar.h
 
 1523983769 c:\users\alejandro\documents\github\codec\boletin2\baja.h
 
-1523984482 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
+1523989791 source:c:\users\alejandro\documents\github\codec\boletin2\baja.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"cliente.h"
 	"buscar.h"
+	"ordenar.h"
 

@@ -3,6 +3,7 @@
 #include <string.h>
 #include "cliente.h"
 #include "buscar.h"
+#include "ordenar.h"
 
 /*void baja_viajes2(int i) //Da de baja a los viajes del cliente eliminando el cliente
 {
@@ -122,7 +123,7 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
         }
         else
         {
-            free(cliente[i].viajes[v].id);
+            free(cliente[i].viajes[v].id);//Liberamos memoria
             free(cliente[i].viajes[v].hotel);
             free(cliente[i].viajes[v].ciudad_destino);
             free(cliente[i].viajes[v].noches);
@@ -131,16 +132,17 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
             free(cliente[i].viajes[v].transporte);
             if(cliente[i].contador_de_viajes>1){
 
-                for(;v<cliente[i].contador_de_viajes;v++){
-                        cliente[i].viajes[v]=cliente[i].viajes[v+1];
+                for(;v<cliente[i].contador_de_viajes-1;v++){//Desplaza posiciones en el array despues de haber borrado el que buscamos
+                        swap2(&cliente[i].viajes[v], &cliente[i].viajes[v+1]);
                 }
-                  cliente[i].contador_de_viajes--;
-
-
+                cliente[i].contador_de_viajes--;
+                printf("Viaje borrado\n");
+                cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(viaje));
+                return cliente;
             }else{
 
             cliente[i].contador_de_viajes--;
-             cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(clientes));
+            cliente[i].viajes=realloc(cliente[i].viajes, cliente[i].contador_de_viajes*sizeof(viaje));
             printf("Viaje borrado\n");
             return cliente;
             }

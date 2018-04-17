@@ -48,9 +48,9 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     fgets(cliente_actual.direccion,150,fichero);
     fclose(fichero);
 
-    if(buscar_cliente(cliente_actual.dni, contador, cliente)==-1)
+    if(buscar_cliente(cliente_actual.dni, contador, cliente)==-1)//Si el cliente existe
     {
-        if(contador !=0 )
+        if(contador !=0 )//Si no es el primer cliente que entra en el sistema
         {
             cliente_actual.contador_de_viajes=0;
             cliente=realloc(cliente,(contador+1)*sizeof(clientes));
@@ -78,24 +78,25 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     exit (EXIT_FAILURE);;
 }
 
-clientes *alta_viaje(int contador_clientes,clientes *cliente){
+clientes *alta_viaje(int contador_clientes,clientes *cliente)
+{
 
-char *nombre_fichero;
-char *dni;
-char *str;
-char *date;
+    char *nombre_fichero;
+    char *dni;
+    char *str;
+    char *date;
 
-int i=0;
+    int i=0;
 
-nombre_fichero = malloc(150*sizeof(char));
-dni = malloc(150*sizeof(char));
-str = malloc(3*sizeof(char));
-date = malloc(150*sizeof(char));
+    nombre_fichero = malloc(150*sizeof(char));
+    dni = malloc(150*sizeof(char));
+    str = malloc(3*sizeof(char));
+    date = malloc(150*sizeof(char));
 
 
-printf("Vamos a introducir un viaje a un cliente\n");
-printf("Introduce el nombre del fichero:");
-fflush(stdin);
+    printf("Vamos a introducir un viaje a un cliente\n");
+    printf("Introduce el nombre del fichero:");
+    fflush(stdin);
     gets(nombre_fichero);
     FILE *fichero;
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
@@ -104,66 +105,71 @@ fflush(stdin);
         exit (EXIT_FAILURE);
     }
 
-fgets(dni,13,fichero);
-dni[strlen(dni) - 1] = '\0';
+    fgets(dni,13,fichero);
+    dni[strlen(dni) - 1] = '\0';
 
-i=buscar_cliente(dni,contador_clientes, cliente);
+    i=buscar_cliente(dni,contador_clientes, cliente);
 
-if(i==-1){
-    fclose(fichero);
-    printf("El cliente no existe.No se ha podido insertar el funcion\n");
-     exit (EXIT_FAILURE);
+    if(i==-1)
+    {
+        fclose(fichero);
+        printf("El cliente no existe.No se ha podido insertar el funcion\n");
+        exit (EXIT_FAILURE);
 
-}else {
-if((cliente[i].contador_de_viajes > 0)){
-    cliente[i].viajes = realloc(cliente[i].viajes,(cliente[i].contador_de_viajes+1)*sizeof(viaje));
-}
-if((cliente[i].contador_de_viajes == 0)){
-    cliente[i].viajes = malloc(sizeof(viaje));
-}
-cliente[i].viajes[cliente[i].contador_de_viajes].id = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].noches = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].hotel = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento = malloc(150*sizeof(char));
-cliente[i].viajes[cliente[i].contador_de_viajes].transporte = malloc(150*sizeof(char));
+    }
+    else
+    {
+        if((cliente[i].contador_de_viajes > 0))
+        {
+            cliente[i].viajes = realloc(cliente[i].viajes,(cliente[i].contador_de_viajes+1)*sizeof(viaje));
+        }
+        if((cliente[i].contador_de_viajes == 0))
+        {
+            cliente[i].viajes = malloc(sizeof(viaje));
+        }
+        cliente[i].viajes[cliente[i].contador_de_viajes].id = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].noches = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].hotel = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento = malloc(150*sizeof(char));
+        cliente[i].viajes[cliente[i].contador_de_viajes].transporte = malloc(150*sizeof(char));
 
-tiempo(date);//Empieza a concatenar cadenas para el id
-strcat(dni,"_");
-sprintf(str, "%d", cliente[i].contador_de_viajes);
-strcat(dni,str);
-strcat(dni,"_");
-strcat(dni,date);
-strcat(dni,"\0");
+        tiempo(date);//Empieza a concatenar cadenas para el id
+        strcat(dni,"_");
+        sprintf(str, "%d", cliente[i].contador_de_viajes);
+        strcat(dni,str);
+        strcat(dni,"_");
+        strcat(dni,date);
+        strcat(dni,"\0");
 
-            strcpy(cliente[i].viajes[cliente[i].contador_de_viajes].id, dni);
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino,150,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino) - 1] = '\0';
+        strcpy(cliente[i].viajes[cliente[i].contador_de_viajes].id, dni);
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino,150,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino) - 1] = '\0';
 
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].hotel,150,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].hotel[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].hotel) - 1] = '\0';
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].hotel,150,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].hotel[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].hotel) - 1] = '\0';
 
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].noches,150,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].noches[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].noches) - 1] = '\0';
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].noches,150,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].noches[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].noches) - 1] = '\0';
 
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento,20,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento) - 1] = '\0';
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento,20,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento) - 1] = '\0';
 
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].transporte,150,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].transporte[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].transporte) - 1] = '\0';
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].transporte,150,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].transporte[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].transporte) - 1] = '\0';
 
-            fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento,20,fichero);
-            cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento) - 1] = '\0';
+        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento,20,fichero);
+        cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento) - 1] = '\0';
 
-            cliente[i].contador_de_viajes++;
-            fclose(fichero);
+        cliente[i].contador_de_viajes++;
+        fclose(fichero);
 
-            printf("Viaje creado con exito\n");
-            printf("El identificador del viaje es %s\n",dni);
+        printf("Viaje creado con exito\n");
+        printf("El identificador del viaje es %s\n",dni);
 
-            return cliente;
+        return cliente;
 
-}
+    }
 
 }
