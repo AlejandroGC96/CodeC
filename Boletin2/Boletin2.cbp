@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="alta.h" />
+		<Unit filename="baja.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="baja.h" />
 		<Unit filename="buscar.c">
 			<Option compilerVar="CC" />
 		</Unit>

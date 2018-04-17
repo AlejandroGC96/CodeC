@@ -29,7 +29,7 @@ clientes* baja_clientes(int *contador_clientes, clientes *cliente)
     }
 
     fgets(dni,15,fichero);
-    i=buscar_cliente(dni, contador_clientes, cliente);
+    i=buscar_cliente(dni, *contador_clientes, cliente);
     if(i==-1)
     {
         printf("No existe el usuario\n");
@@ -44,7 +44,7 @@ clientes* baja_clientes(int *contador_clientes, clientes *cliente)
     opcion=getc(stdin);
     if(opcion!='n')
     {
-          int v=0;
+
     for(; v<cliente[i].contador_de_viajes; v++)
     {
             free(cliente[i].viajes[v].id);//Liberamos memoria

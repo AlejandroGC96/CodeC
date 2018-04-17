@@ -75,7 +75,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     }
     else
         printf("El cliente ya existe en el sistema\n");
-    exit (EXIT_FAILURE);;
+    exit (EXIT_FAILURE);
 }
 
 clientes *alta_viaje(int contador_clientes,clientes *cliente)
