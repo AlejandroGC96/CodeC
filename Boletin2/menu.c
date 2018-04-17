@@ -3,7 +3,7 @@
 #include "alta.h"
 #include "cliente.h"
 #include "mostrar.h"
-#include "mostrar.h"
+#include "ordenar.h"
 
 
 void menu()
@@ -32,6 +32,7 @@ void menu()
         case 2:
             break;
         case 3:
+            cliente = alta_viaje(contador_clientes, cliente);
             break;
         case 4:
             break;

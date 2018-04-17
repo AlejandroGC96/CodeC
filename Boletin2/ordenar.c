@@ -21,23 +21,11 @@ void bubbleSort(clientes *cliente, int n)
               swap(&cliente[j], &cliente[j+1]);
 }
 
-/* Function to print an array */
-void printArray(clientes *cliente, int size)
-{
-    int i;
-    for (i=0; i < size; i++)
-        printf("%d ", cliente[i]);
-    printf("\n");
-}
 
 // Driver program to test above functions
 
 int ordenar(clientes *cliente, int contador){
 
-    //int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    //int n = sizeof(cliente)/sizeof(apellidos);
     bubbleSort(cliente, contador);
-    //printf("Sorted array: \n");
-    //printArray(cliente, contador);
     return 0;
 }

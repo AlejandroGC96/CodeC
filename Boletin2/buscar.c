@@ -28,7 +28,7 @@ int buscar_viaje(int i,char *id)
     char id_2[11];
     int comparacion=0;
 
-    for(v=0; v<=49; v++)
+    for(v=0; v<49; v++)
     {
 
         strncpy(id_2,clientes[i].viajes[v].id,11);
@@ -42,5 +42,5 @@ int buscar_viaje(int i,char *id)
     }
     return -1;
 }
-*/
 
+*/
