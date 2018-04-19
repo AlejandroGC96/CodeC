@@ -38,13 +38,14 @@
 
 1523866639 c:\users\alex_\documents\github\codec\boletin2\menu.h
 
-1523962706 source:c:\users\alex_\documents\github\codec\boletin2\menu.c
+1524046980 source:c:\users\alex_\documents\github\codec\boletin2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	"alta.h"
 	"cliente.h"
 	"mostrar.h"
 	"ordenar.h"
+	"baja.h"
 
 1523958847 c:\users\alex_\documents\github\codec\boletin2\alta.h
 	"cliente.h"
@@ -54,7 +55,7 @@
 
 1523952136 c:\users\alex_\documents\github\codec\boletin2\mostrar.h
 
-1523955610 source:c:\users\alex_\documents\github\codec\boletin2\mostrar.c
+1524046980 source:c:\users\alex_\documents\github\codec\boletin2\mostrar.c
 	<stdio.h>
 	<stdlib.h>
 	"cliente.h"
@@ -71,14 +72,14 @@
 
 1523879445 c:\users\alex_\documents\github\codec\boletin2\buscar.h
 
-1523956545 source:c:\users\alex_\documents\github\codec\boletin2\buscar.c
+1524046980 source:c:\users\alex_\documents\github\codec\boletin2\buscar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"cliente.h"
 	"alta.h"
 
-1523952891 source:c:\users\alex_\documents\github\codec\boletin2\ordenar.c
+1524046980 source:c:\users\alex_\documents\github\codec\boletin2\ordenar.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -142,7 +143,7 @@
 
 1523952867 c:\users\alex_\documents\github\codec\boletin2\viajes.h
 
-1523952136 c:\users\alex_\documents\github\codec\boletin2\ordenar.h
+1524046980 c:\users\alex_\documents\github\codec\boletin2\ordenar.h
 
 1523979429 c:\users\alejandro\documents\github\codec\boletin2\viajes.h
 
@@ -157,4 +158,6 @@
 	"cliente.h"
 	"buscar.h"
 	"ordenar.h"
+
+1524046980 c:\users\alex_\documents\github\codec\boletin2\baja.h
 

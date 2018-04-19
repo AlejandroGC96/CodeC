@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "cliente.h"
+/**
+\file mostrar.c
+\brief Archivo con la estructura de los clientes del sistema
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
+
 
 void mostrar(int contador_clientes, clientes *cliente)
 {

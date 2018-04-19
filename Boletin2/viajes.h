@@ -1,5 +1,14 @@
 #ifndef VIAJES_H_INCLUDED
 #define VIAJES_H_INCLUDED
+/**
+\file viajes.h
+\brief Archivo con la estructura de los viajes en el sistema
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
+
 typedef struct viajes
 {
 

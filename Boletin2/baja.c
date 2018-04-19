@@ -4,6 +4,14 @@
 #include "cliente.h"
 #include "buscar.h"
 #include "ordenar.h"
+/**
+\file baja.c
+\brief Archivo para dar de baja a los usuarios y clientes en el sistema
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
 
 
 clientes* baja_clientes(int *contador_clientes, clientes *cliente)
@@ -25,7 +33,7 @@ clientes* baja_clientes(int *contador_clientes, clientes *cliente)
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
-        exit (EXIT_FAILURE);
+        return cliente;
     }
 
     fgets(dni,15,fichero);
@@ -33,7 +41,7 @@ clientes* baja_clientes(int *contador_clientes, clientes *cliente)
     if(i==-1)
     {
         printf("No existe el usuario\n");
-        exit (EXIT_FAILURE);;
+        return cliente;
     }
     if(cliente[i].contador_de_viajes>0)
     {
@@ -74,7 +82,7 @@ clientes* baja_clientes(int *contador_clientes, clientes *cliente)
     }
     else
         printf("Operacion cancelada. Saliendo.......\n");
-     exit (EXIT_FAILURE);
+     return cliente;
 
 }
 
@@ -105,7 +113,7 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
-        exit (EXIT_FAILURE);
+        return cliente;
     }
 
     fgets(id,15,fichero);
@@ -117,7 +125,7 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
     {
         printf("No existe ningun cliente con ese DNI %s\n",dni);
 
-        exit (EXIT_FAILURE);
+        return cliente;
     }
     else
     {
@@ -126,7 +134,7 @@ clientes* baja_viajes(int contador_clientes, clientes *cliente)
         {
             printf("El viaje asignado no existe\n");
 
-            exit (EXIT_FAILURE);
+            return cliente;
 
 
         }

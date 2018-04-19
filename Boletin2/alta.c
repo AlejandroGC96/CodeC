@@ -7,6 +7,15 @@
 #include "menu.h"
 #include "buscar.h"
 
+/**
+\file alta.h
+\brief Archivo con las funciones para dar de alta a los usuarios y sus viajes
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
+
 void tiempo(char output[])//Calcula el tiempo para el id
 {
 
@@ -31,7 +40,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
-        exit (EXIT_FAILURE);
+        return cliente;
     }
     cliente_actual.dni = malloc(150*sizeof(char));
     cliente_actual.nombre = malloc(150*sizeof(char));
@@ -75,7 +84,7 @@ clientes *alta_cliente(int *contador_clientes, clientes *cliente)
     }
     else
         printf("El cliente ya existe en el sistema\n");
-    exit (EXIT_FAILURE);
+    return cliente;
 }
 
 clientes *alta_viaje(int contador_clientes,clientes *cliente)
@@ -102,7 +111,7 @@ clientes *alta_viaje(int contador_clientes,clientes *cliente)
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
-        exit (EXIT_FAILURE);
+        return cliente;
     }
 
     fgets(dni,13,fichero);
@@ -114,7 +123,7 @@ clientes *alta_viaje(int contador_clientes,clientes *cliente)
     {
         fclose(fichero);
         printf("El cliente no existe.No se ha podido insertar el funcion\n");
-        exit (EXIT_FAILURE);
+        return cliente;
 
     }
     else

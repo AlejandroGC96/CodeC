@@ -3,6 +3,15 @@
 #include <string.h>
 #include "cliente.h"
 #include "alta.h"
+/**
+\file buscar.c
+\brief Busca viajes y clientes en el sistema
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
+
 
 int buscar_cliente(char *dni, int contador, clientes *cliente)//Return el valor de la posicion del cliente que estamos buscando
 {

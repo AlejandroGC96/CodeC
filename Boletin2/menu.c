@@ -6,6 +6,16 @@
 #include "ordenar.h"
 #include "baja.h"
 
+/**
+\file menu.c
+\brief Archivo con el menú del programa
+\author José Maria Mirete Fernandez
+\author Alejandro García Cortado
+\version 1.0
+\date 04/2018
+*/
+
+
 void menu()
 {
     clientes *cliente;
