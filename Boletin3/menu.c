@@ -14,6 +14,8 @@ printf("2.Dar de baja a los clientes\n");
 printf("3.Dar de alta a los viajes\n");
 printf("4.Dar de baja a los viajes\n");
 printf("5.Listar los datos de la agencia\n");
+scanf("%d",&opcion);
+fflush(stdin);
 switch(opcion){
 
 case 1:

@@ -7,7 +7,9 @@ typedef struct cliente{
     char *nombre;
     char *apellidos;
     char *direccion;
+    clientes *anterior;
+    clientes *posterior;
 
-}clientes;
+}clientes;s
 
 #endif // CLIENTES_H_INCLUDED
