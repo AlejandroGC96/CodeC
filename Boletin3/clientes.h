@@ -12,7 +12,7 @@ typedef struct cliente{
 
 typedef struct Nodo{
 
-    clientes clientes;
+    clientes *clientes;
     struct Nodo* siguiente;
 
 }Nodo;
