@@ -6,11 +6,13 @@
 
 void menu(){
 
-Lista lista;
-clientes* clientes;
+
+clientes *cliente;
+viajes *viaje;
+
 int opcion=0;
 
-lista.cabeza=CrearLista();
+Lista_clientes = CrearListaClientes();
 
 do{
 printf("###Menu###\n");
@@ -25,6 +27,8 @@ fflush(stdin);
 switch(opcion){
 
 case 1:
+    cliente=alta_cliente(cliente);
+    Lista_clientes=Insertar_Lista(Lista_clientes,cliente);
     break;
 case 2:
     break;
@@ -39,4 +43,5 @@ default:
 }
 
 }while(opcion!=6);
+
 }

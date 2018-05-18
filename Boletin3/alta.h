@@ -3,12 +3,9 @@
 #include "clientes.h"
 
 
-Nodo* CrearLista();
-Nodo* CrearCliente(clientes* cliente);
-void InsertarPrincipio(Lista* lista, clientes* clientes);
-void InsertarFinal(Lista* lista, clientes* cliente);
-void InsertarDespues(int n, Lista* lista, clientes* clientes);
-
+Nodo_clientes* CrearListaClientes();
+clientes *alta_cliente(clientes *cliente);
+Nodo_clientes* Insertar_Lista(Nodo_clientes *Lista_clientes,clientes *cliente);
 
 
 #endif // ALTA_H_INCLUDED

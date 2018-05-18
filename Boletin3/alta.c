@@ -4,102 +4,24 @@
 #include "alta.h"
 #include "clientes.h"
 
- Nodo* CrearLista()
+Nodo_clientes* CrearListaClientes()
 {
-   return NULL;
-}
 
 
-Nodo* CrearNodo(clientes* clientes)
-{
-    Nodo* nodo = (Nodo*)malloc(sizeof(Nodo));
+    return NULL;
 
-    strncpy(nodo->clientes->dni, clientes->dni, 150);
-    strncpy(nodo->clientes->nombre, clientes->nombre, 150);
-    strncpy(nodo->clientes->apellidos, clientes->apellidos,150);
-    strncpy(nodo->clientes->direccion, clientes->direccion,150);
 
-    nodo->siguiente=NULL;
-
-    return nodo;
 
 }
 
-void InsertarPrincipio(Lista* lista, clientes* clientes)
-{
-
-    Nodo* nodo = CrearNodo(clientes);
-    nodo->siguiente = lista->cabeza;
-    lista->cabeza = nodo;
-    lista->longitud++;
-
-}
-
-void InsertarFinal(Lista* lista, clientes* cliente)
-{
-
-    Nodo* nodo = CrearNodo(cliente);
-    if(lista->cabeza == NULL)
-    {
-        lista->cabeza= nodo;
-    }
-    else
-    {
-        Nodo* puntero = lista->cabeza;
-        while (puntero->siguiente)
-        {
-            puntero = puntero->siguiente;
-        }
-        puntero->siguiente = nodo;
-
-    }
-    lista->longitud++;
-}
-
-void InsertarDespues(int n, Lista* lista, clientes* clientes)
-{
-
-    Nodo* nodo = CrearNodo(clientes);
-
-    if(lista->cabeza == NULL)
-    {
-
-        lista->cabeza=nodo;
-    }
-    else
-    {
-        Nodo* puntero = lista->cabeza;
-        int posicion=0;
-        while (posicion < n && puntero->siguiente)
-        {
-            puntero = puntero->siguiente;
-            posicion++;
-        }
-        nodo->siguiente = puntero->siguiente;
-        puntero->siguiente = nodo;
-
-    }
-
-    lista->longitud++;
-
-}
-void tiempo(char output[])//Calcula el tiempo para el id
-{
-
-    time_t tiempo = time(0);
-    struct tm *tlocal = localtime(&tiempo);
-    strftime(output,128,"%d_%m_%y",tlocal);
-
-}
-
-clientes *alta_cliente()
+clientes *alta_cliente(clientes *cliente)
 {
 
 
-    clientes cliente_actual;
     char *nombre_fichero;
 
     nombre_fichero=malloc(250*sizeof(char));
+    cliente=(clientes*)malloc(sizeof(clientes));
     printf("Vamos a dar de alta a un cliente.\n");
     printf("Introduce el nombre del fichero:");
     fflush(stdin);
@@ -108,26 +30,92 @@ clientes *alta_cliente()
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
-        return cliente_actual;
+        return cliente;
     }
-    cliente_actual.dni = malloc(150*sizeof(char));
-    cliente_actual.nombre = malloc(150*sizeof(char));
-    cliente_actual.apellidos = malloc(150*sizeof(char));
-    cliente_actual.direccion = malloc(150*sizeof(char));
+    cliente->dni = malloc(150*sizeof(char));
+    cliente->nombre = malloc(150*sizeof(char));
+    cliente->apellidos = malloc(150*sizeof(char));
+    cliente->direccion = malloc(150*sizeof(char));
 
 
-    fgets(cliente_actual.dni,150,fichero);
-    cliente_actual.dni[strlen(cliente_actual.dni) - 1] = '\0';
-    fgets(cliente_actual.nombre,150,fichero);
-    cliente_actual.nombre[strlen(cliente_actual.nombre) - 1] = '\0';
-    fgets(cliente_actual.apellidos,150,fichero);
-    cliente_actual.apellidos[strlen(cliente_actual.apellidos) - 1] = '\0';
-    fgets(cliente_actual.direccion,150,fichero);
+    fgets(cliente->dni,150,fichero);
+    cliente->dni[strlen(cliente->dni) - 1] = '\0';
+    fgets(cliente->nombre,150,fichero);
+    cliente->nombre[strlen(cliente->nombre) - 1] = '\0';
+    fgets(cliente->apellidos,150,fichero);
+    cliente->apellidos[strlen(cliente->apellidos) - 1] = '\0';
+    fgets(cliente->direccion,150,fichero);
     fclose(fichero);
-  //  cliente_actual.contador_de_viajes=0;
 
-            printf("El cliente %s se a%cadio correctamente al sistema\n", cliente_actual.nombre,-92);
-            return cliente_actual;
+
+
+
+    printf("El cliente %s se a%cadio correctamente al sistema\n", cliente->nombre,-92);
+
+    return cliente;
+
+}
+
+Nodo_clientes* Insertar_Lista(Nodo_clientes *Lista_clientes,clientes *cliente)
+{
+
+
+    Nodo_clientes *p1, *p2, *p_v;
+
+    p1=Lista_clientes;
+
+
+    if(Lista_clientes!=NULL)
+    {
+
+while((p1->siguiente != NULL) && (strcmp(cliente->dni,p1->clientes->dni)<=0)){
+
+        p2=p1;
+        p1=p1->siguiente;
+
+
+}
+
+}
+
+p_v=(Nodo_clientes*)malloc(sizeof(clientes));
+
+if(p_v!=NULL){
+
+    p_v->clientes=cliente;
+    //p_v->clientes->viajes=CrearListaLibros();
+    if(Lista_clientes==NULL){
+
+        p_v->siguiente=NULL;
+        Lista_clientes=p_v;
+
+    }
+    else {
+
+        if(strcmp(cliente->dni, p1->clientes->dni)<=0){
+
+            if(p1==Lista_clientes){
+
+                p_v->siguiente=p1;
+                Lista_clientes=p_v;
+
+            }else{
+            p2->siguiente = p_v;
+            p1->siguiente=p_v;
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+}
+
+return Lista_clientes;
 
 }
 

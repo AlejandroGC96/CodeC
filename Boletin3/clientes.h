@@ -1,5 +1,6 @@
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
+#include "viajes.h"
 
 typedef struct cliente{
 
@@ -7,20 +8,18 @@ typedef struct cliente{
     char *nombre;
     char *apellidos;
     char *direccion;
+    Lista_viajes viajes;
 
 }clientes;
 
-typedef struct Nodo{
+typedef struct Nodo_clientes{
 
     clientes *clientes;
-    struct Nodo* siguiente;
+    struct Nodo_clientes* siguiente;
 
-}Nodo;
+}Nodo_clientes;
 
-typedef struct Lista{
+Nodo_clientes *Lista_clientes;
+Nodo_clientes *Posicion_clientes;
 
-    Nodo* cabeza;
-    int longitud;
-
-}Lista;
 #endif // CLIENTES_H_INCLUDED
