@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "clientes.h"
+#include "alta.h"
 
 
 void menu(){
 
+Lista* lista;
+clientes* clientes;
 int opcion=0;
 
 do{
@@ -19,6 +22,7 @@ fflush(stdin);
 switch(opcion){
 
 case 1:
+    alta_cliente(lista, clientes);
     break;
 case 2:
     break;
