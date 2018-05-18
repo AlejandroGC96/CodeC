@@ -1,6 +1,6 @@
 #ifndef ALTA_H_INCLUDED
 #define ALTA_H_INCLUDED
 
-clientes* alta_clientes();
+Nodo* CrearCliente(clientes* cliente);
 
 #endif // ALTA_H_INCLUDED

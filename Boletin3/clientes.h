@@ -7,9 +7,20 @@ typedef struct cliente{
     char *nombre;
     char *apellidos;
     char *direccion;
-    clientes *anterior;
-    clientes *posterior;
 
-}clientes;s
+}clientes;
 
+typedef struct Nodo{
+
+    clientes clientes;
+    struct Nodo* siguiente;
+
+}Nodo;
+
+typedef struct Lista{
+
+    Nodo* cabeza;
+    int longitud;
+
+}Lista;
 #endif // CLIENTES_H_INCLUDED
