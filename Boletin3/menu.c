@@ -33,10 +33,12 @@ case 1:
 case 2:
     break;
 case 3:
+    Lista_clientes=alta_libros(Lista_clientes, viaje);
     break;
 case 4:
     break;
 case 5:
+    mostrar(Lista_clientes);
     break;
 default:
     break;
