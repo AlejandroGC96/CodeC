@@ -31,23 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="alta.c">
+		<Unit filename="estructuras.h" />
+		<Unit filename="funciones_cliente.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="alta.h" />
-		<Unit filename="buscar.c">
+		<Unit filename="funciones_cliente.h" />
+		<Unit filename="funciones_cliente_auxiliares.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="buscar.h" />
-		<Unit filename="clientes.h" />
+		<Unit filename="funciones_cliente_auxiliares.h" />
+		<Unit filename="funciones_viajes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_viajes.h" />
+		<Unit filename="funciones_viajes_auxiliares.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_viajes_auxiliares.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menu.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="menu.h" />
-		<Unit filename="viajes.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

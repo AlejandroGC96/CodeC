@@ -140,11 +140,9 @@ if(p_v!=NULL){
 return Lista_clientes;
 
 }
-Nodo_clientes* alta_viajes(Nodo_clientes *Lista_clientes,viajes *viaje){
+Nodo_clientes* alta_viajes(Lista_clientes L ,viajes *viaje){
 
-    Nodo_clientes *l;
-    Nodo_viajes *i;
-    l=Lista_clientes;
+    Lista_clientes l, i;
 
     char *nombre_fichero;
     char *dni;
@@ -234,11 +232,11 @@ Nodo_clientes* alta_viajes(Nodo_clientes *Lista_clientes,viajes *viaje){
         printf("Viaje creado con exito\n");
         printf("El identificador del viaje es %s\n",dni);
 
-        return l;
+
 
     }
 
-
+    return L;
 
 
 
