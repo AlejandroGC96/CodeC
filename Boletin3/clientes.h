@@ -19,7 +19,6 @@ typedef struct Nodo_clientes{
 
 }Nodo_clientes;
 
-Nodo_clientes *Lista_clientes;
-Nodo_clientes *Posicion_clientes;
+typedef struct Nodo_clientes *Lista_clientes;
 
 #endif // CLIENTES_H_INCLUDED

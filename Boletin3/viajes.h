@@ -23,6 +23,5 @@ typedef struct Nodo_viajes{
 }Nodo_viajes;
 
 typedef struct Nodo_viajes *Lista_viajes;
-typedef struct Nodo_viajes *Posicion_viajes;
 
 #endif // VIAJES_H_INCLUDED

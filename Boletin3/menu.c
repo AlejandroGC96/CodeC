@@ -7,13 +7,13 @@
 
 void menu(){
 
-
+Lista_clientes  L;
 clientes *cliente;
 viajes *viaje;
 
-int opcion=0;
+L=CrearListaClientes();
 
-Lista_clientes = CrearListaClientes();
+int opcion=0;
 
 do{
 printf("###Menu###\n");
@@ -29,17 +29,17 @@ switch(opcion){
 
 case 1:
     cliente=alta_cliente(cliente);
-    Lista_clientes=Insertar_Lista(Lista_clientes,cliente);
+    L =Insertar_Lista(L ,cliente);
     break;
 case 2:
     break;
 case 3:
-    Lista_clientes=alta_viajes(Lista_clientes, viaje);
+    L =alta_viajes(L, viaje);
     break;
 case 4:
     break;
 case 5:
-    mostrar(Lista_clientes);
+    mostrar(L);
     break;
 default:
     break;
