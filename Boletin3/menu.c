@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "clientes.h"
 #include "alta.h"
+#include "buscar.h"
 
 
 void menu(){
@@ -33,7 +34,7 @@ case 1:
 case 2:
     break;
 case 3:
-    Lista_clientes=alta_libros(Lista_clientes, viaje);
+    Lista_clientes=alta_viajes(Lista_clientes, viaje);
     break;
 case 4:
     break;

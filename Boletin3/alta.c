@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include "buscar.h"
 #include "alta.h"
 #include "clientes.h"
 
@@ -23,6 +25,15 @@ Nodo_viajes* CrearListaLibros()
 
 
 }
+void tiempo(char output[])//Calcula el tiempo para el id
+{
+
+    time_t tiempo = time(0);
+    struct tm *tlocal = localtime(&tiempo);
+    strftime(output,128,"%d_%m_%y",tlocal);
+
+}
+
 clientes *alta_cliente(clientes *cliente)
 {
 
@@ -31,6 +42,7 @@ clientes *alta_cliente(clientes *cliente)
 
     nombre_fichero=malloc(250*sizeof(char));
     cliente=(clientes*)malloc(sizeof(clientes));
+
     printf("Vamos a dar de alta a un cliente.\n");
     printf("Introduce el nombre del fichero:");
     fflush(stdin);
@@ -39,6 +51,7 @@ clientes *alta_cliente(clientes *cliente)
     if ((fichero = fopen(nombre_fichero, "r")) == NULL)
     {
         fprintf(stderr, "No se puede abrir el fichero\n");
+
         return cliente;
     }
     cliente->dni = malloc(150*sizeof(char));
@@ -127,16 +140,18 @@ if(p_v!=NULL){
 return Lista_clientes;
 
 }
-Nodo_clientes* alta_libros(Nodo_clientes *Lista_clientes,viajes *viaje){
+Nodo_clientes* alta_viajes(Nodo_clientes *Lista_clientes,viajes *viaje){
 
-    Lista_clientes l;
+    Nodo_clientes *l;
+    Nodo_viajes *i;
+    l=Lista_clientes;
 
     char *nombre_fichero;
     char *dni;
     char *str;
     char *date;
 
-    int i=0;
+    int j=0;
 
     nombre_fichero = malloc(150*sizeof(char));
     dni = malloc(150*sizeof(char));
@@ -158,62 +173,63 @@ Nodo_clientes* alta_libros(Nodo_clientes *Lista_clientes,viajes *viaje){
     fgets(dni,13,fichero);
     dni[strlen(dni) - 1] = '\0';
 
-    l = buscar_cliente(Nodo_clientes* Lista_clientes, char *nombre)
+    l = buscar_cliente(l, dni);
 
     if(l==NULL)
     {
         fclose(fichero);
         printf("El cliente no existe.No se ha podido insertar el funcion\n");
-        return cliente;
+        return l;
 
     }
     else
     {
-        if((cliente[i].contador_de_viajes > 0))
-        {
-            cliente[i].viajes = realloc(cliente[i].viajes,(cliente[i].contador_de_viajes+1)*sizeof(viaje));
-        }
-        if((cliente[i].contador_de_viajes == 0))
-        {
-            cliente[i].viajes = malloc(sizeof(viaje));
-        }
-        cliente[i].viajes[cliente[i].contador_de_viajes].id = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].noches = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].hotel = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento = malloc(150*sizeof(char));
-        cliente[i].viajes[cliente[i].contador_de_viajes].transporte = malloc(150*sizeof(char));
+
+
+       viaje = (viajes*)malloc((sizeof(viaje)));
+       viaje->id = (char *)malloc(150*sizeof(char));
+       viaje->hotel = (char *)malloc(150*sizeof(char));
+       viaje->ciudad_destino = (char *)malloc(150*sizeof(char));
+       viaje->noches = (char *)malloc(150*sizeof(char));
+       viaje->precio_alojamiento = (char *)malloc(150*sizeof(char));
+       viaje->precio_desplazamiento = (char *)malloc(150*sizeof(char));
+       viaje->transporte = (char *)malloc(150*sizeof(char));
+
 
         tiempo(date);//Empieza a concatenar cadenas para el id
         strcat(dni,"_");
-        sprintf(str, "%d", cliente[i].contador_de_viajes);
+        sprintf(str, "%d", j);
         strcat(dni,str);
         strcat(dni,"_");
         strcat(dni,date);
         strcat(dni,"\0");
 
-        strcpy(cliente[i].viajes[cliente[i].contador_de_viajes].id, dni);
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino,150,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].ciudad_destino) - 1] = '\0';
+        strcpy(viaje->id, dni);
+        fgets(viaje->ciudad_destino,150,fichero);
+        viaje->ciudad_destino[strlen(viaje->ciudad_destino) - 1] = '\0';
 
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].hotel,150,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].hotel[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].hotel) - 1] = '\0';
+        fgets(viaje->hotel,150,fichero);
+        viaje->hotel[strlen(viaje->hotel) - 1] = '\0';
 
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].noches,150,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].noches[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].noches) - 1] = '\0';
+        fgets(viaje->noches,150,fichero);
+        viaje->noches[strlen(viaje->noches) - 1] = '\0';
 
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento,20,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_alojamiento) - 1] = '\0';
+        fgets(viaje->precio_alojamiento,20,fichero);
+        viaje->precio_alojamiento[strlen(viaje->precio_alojamiento) - 1] = '\0';
 
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].transporte,150,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].transporte[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].transporte) - 1] = '\0';
+        fgets(viaje->transporte,150,fichero);
+        viaje->transporte[strlen(viaje->transporte) - 1] = '\0';
 
-        fgets(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento,20,fichero);
-        cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento[strlen(cliente[i].viajes[cliente[i].contador_de_viajes].precio_desplazamiento) - 1] = '\0';
+        fgets(viaje->precio_desplazamiento,20,fichero);
+        viaje->precio_desplazamiento[strlen(viaje->precio_desplazamiento) - 1] = '\0';
 
-        cliente[i].contador_de_viajes++;
         fclose(fichero);
+
+        i=l->clientes->viajes;
+
+       l->clientes->viajes= InsertarListaViaje(l->clientes->viajes, i,viaje);
+
+
 
         printf("Viaje creado con exito\n");
         printf("El identificador del viaje es %s\n",dni);
@@ -225,6 +241,36 @@ Nodo_clientes* alta_libros(Nodo_clientes *Lista_clientes,viajes *viaje){
 
 
 
+
+
+}
+
+Nodo_viajes* InsertarListaViaje(Nodo_viajes *v, Nodo_viajes *i, viajes *viaje){
+
+
+Nodo_viajes *v2;
+
+v2= (Nodo_viajes*)malloc(sizeof(Nodo_viajes));
+
+if( v2 != NULL){
+
+
+    v2->viajes = viaje;
+
+    if(v==NULL){
+        v2->siguiente=NULL;
+        v=v2;
+
+    }
+    else{
+        v2->siguiente = i->siguiente;
+        i->siguiente=v;
+    }
+
+
+}
+
+return v;
 
 
 }

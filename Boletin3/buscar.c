@@ -47,7 +47,7 @@ void mostrar(Nodo_clientes *Lista_clientes)
 
 
 }
-Nodo* buscar_cliente(Nodo_clientes* Lista_clientes, char *nombre)//Return el valor de la posicion del cliente que estamos buscando
+Nodo_clientes* buscar_cliente(Nodo_clientes* Lista_clientes, char *dni)//Return el valor de la posicion del cliente que estamos buscando
 {
     Nodo_clientes *p;
     p=Lista_clientes;
