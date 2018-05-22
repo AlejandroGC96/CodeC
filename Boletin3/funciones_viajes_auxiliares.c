@@ -3,12 +3,12 @@
 #include <string.h>
 #include "estructuras.h"
 #include "funciones_viajes.h"
+#include "funciones_viajes_auxiliares.h"
 #include "funciones_cliente.h"
 
 struct cliente *alta_viaje(Lista_cliente L, struct viaje *vj)
 {
-    int i,lenght;
-    //float f;
+    int lenght;
     char buffer[255];
     Lista_cliente laux;
 
@@ -69,11 +69,10 @@ struct cliente *alta_viaje(Lista_cliente L, struct viaje *vj)
         lenght = strlen(buffer);
         vj->preciodes = (char *)malloc((lenght+1)*sizeof(char));
         strncpy(vj->preciodes,buffer,lenght+1);
-        //vj->precio = 0;//deja por defecto el precio a 0
 
         laux->cl->v = l_viaje_insertar(laux->cl->v, l_viaje_primero(laux->cl->v),vj);
     }
-    return L; //devuelve todos los datos introducidos del nuevo viaje
+    return laux; //devuelve todos los datos introducidos del nuevo viaje
 }
 
 void mostrar_viaje(struct viaje *vj)

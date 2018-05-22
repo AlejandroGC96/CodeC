@@ -1,7 +1,8 @@
 #include "estructuras.h"
 #include "funciones_viajes_auxiliares.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <stdlib.h>
 struct nodo_viaje* l_viaje_crear(void)
 {
    return NULL;
@@ -40,10 +41,6 @@ struct nodo_viaje* l_viaje_insertar(struct nodo_viaje *l, struct nodo_viaje *pin
     return(l);
 }
 
-struct nodo_viaje* l_viaje_inser_ppo(struct nodo_viaje *l, struct viaje *n)
-{
-
-}
 
 
 struct nodo_viaje* l_viaje_primero(struct nodo_viaje *l)
@@ -85,7 +82,7 @@ int l_viaje_longitud(struct nodo_viaje *l)
     struct nodo_viaje *paux;
     paux = l;
     contador = 1;
-    if (paux->psig == NULL) system("PAUSE");
+    if (paux->psig == NULL)
     while (paux->psig != NULL) {
 
         contador++;
@@ -117,14 +114,14 @@ struct viaje *l_viaje_elemento(struct nodo_viaje *l, struct nodo_viaje *pindice)
 void l_viaje_borrar(struct nodo_viaje *l, struct nodo_viaje *pindice)
 {
 
-    l_viaje_localizar(struct nodo_viaje *l, const int posicion)
+    l_viaje_localizar(struct nodo_viaje *l, const int posicion);
 
 
 
 }
 int l_viaje_longitud(struct nodo_cliente *l)
 {
-    int contador, contador2;
+    int contador;
     struct nodo_cliente *paux;
     paux = l;
     contador = 1;
@@ -159,3 +156,4 @@ void l_viaje_destruir (struct nodo_viaje *l)
 
 
 }
+

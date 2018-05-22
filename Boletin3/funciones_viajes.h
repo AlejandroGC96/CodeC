@@ -5,7 +5,6 @@
 
 struct nodo_viaje* l_libro_crear(void);
 struct nodo_viaje* l_libro_insertar(struct nodo_viaje *l, struct nodo_viaje *pindice, struct viaje *n);
-struct nodo_viaje* l_libro_inser_ppo(struct nodo_viaje *l, struct viaje *n);
 struct nodo_viaje* l_libro_primero(struct nodo_viaje *l);
 struct nodo_viaje* l_libro_ultimo(struct nodo_viaje *l);
 struct nodo_viaje* l_libro_siguiente(struct nodo_viaje *l, struct nodo_viaje *pindice);

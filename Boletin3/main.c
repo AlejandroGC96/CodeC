@@ -4,6 +4,8 @@
 #include "estructuras.h"
 #include "funciones_cliente.h"
 #include "funciones_cliente_auxiliares.h"
+#include "funciones_viajes.h"
+#include "funciones_viajes_auxiliares.h"
 
 int main()
 {
@@ -40,7 +42,7 @@ int main()
             L = alta_viaje(L,vj_temp);
             break;
         case 4:
-            l_viaje_borrar(L,L);
+           l_viaje_borrar(L,L);
             break;
         case 5:
             l_cliente_mostrar(L);
