@@ -7,11 +7,6 @@
 
 void menu(){
 
-Lista_clientes  L;
-clientes *cliente;
-viajes *viaje;
-
-L=CrearListaClientes();
 
 int opcion=0;
 
@@ -28,18 +23,17 @@ fflush(stdin);
 switch(opcion){
 
 case 1:
-    cliente=alta_cliente(cliente);
-    L =Insertar_Lista(L ,cliente);
+    insertar_cliente();
     break;
 case 2:
     break;
 case 3:
-    L =alta_viajes(L, viaje);
+
     break;
 case 4:
     break;
 case 5:
-    mostrar(L);
+    mostrar();
     break;
 default:
     break;

@@ -4,50 +4,69 @@
 #include "alta.h"
 #include "clientes.h"
 
+extern lclientes *lista;
 
-void mostrar(Nodo_clientes *Lista_clientes)
+void mostrar()
 {
 
-    Nodo_clientes *p,*v;
-    p=Lista_clientes;
-    v=Lista_clientes;
-    while(p != NULL)
+    if (lista==NULL){
+
+        printf("No hay nada en memoria\n");
+        return;
+    }
+
+    lclientes *c;
+    lviajes *v;
+    c=lista;
+
+    while(c->anterior)
+        c=c->anterior;
+
+
+
+
+    printf("#########Listado de clientes#########\n");
+
+    while(c != NULL)
     {
 
         printf("-------------------------\n");
-        printf(" DNI : %s\n",p->clientes->dni);
-        printf(" Nombre : %s\n", p->clientes->nombre);
-        printf(" Apellidos : %s\n", p->clientes->apellidos);
-        printf(" Direccion : %s\n", p->clientes->direccion);
+        printf(" DNI : %s\n",c->dni);
+        printf(" Nombre : %s\n", c->nombre);
+        printf(" Apellidos : %s\n", c->apellidos);
+        printf(" Direccion : %s\n", c->direccion);
         printf("-------------------------\n");
 
-        if(p->clientes->viajes != NULL)
+        if(c->contador_viajes !=0)
         {
 
-            v=p;
+            if(v){
+            while(v->anterior)
+                v=v->anterior;
 
-            while(v->clientes->viajes->siguiente != NULL)
+            while(v->siguiente != NULL)
             {
                 printf("\t-------------------------\n");
-                printf("\t ID : %s\n",v->clientes->viajes->viajes->id);
-                printf("\t Ciudad : %s\n", v->clientes->viajes->viajes->ciudad_destino);
-                printf("\t Hotel : %s\n", v->clientes->viajes->viajes->hotel);
-                printf("\t Noches : %s\n", v->clientes->viajes->viajes->noches);
-                printf("\t  Precio alojamiento: %s\n", v->clientes->viajes->viajes->precio_alojamiento);
-                printf("\t  Tranporte: %s\n", v->clientes->viajes->viajes->transporte);
-                printf("\t  Precio desplazamiento: %s\n", v->clientes->viajes->viajes->precio_desplazamiento);
+                printf("\t ID : %s\n",v->id);
+                printf("\t Ciudad : %s\n", v->ciudad_destino);
+                printf("\t Hotel : %s\n", v->hotel);
+                printf("\t Noches : %s\n", v->noches);
+                printf("\t  Precio alojamiento: %s\n", v->precio_alojamiento);
+                printf("\t  Tranporte: %s\n", v->transporte);
+                printf("\t  Precio desplazamiento: %s\n", v->precio_desplazamiento);
                 printf("\t-------------------------\n");
 
-                v = v->clientes->viajes->siguiente;
+                v = v->siguiente;
             }
         }
-        p = p->siguiente;
+        }
+        c = c->siguiente;
 
     }
 
 
 }
-Nodo_clientes* buscar_cliente(Nodo_clientes* Lista_clientes, char *dni)//Return el valor de la posicion del cliente que estamos buscando
+/*Nodo_clientes* buscar_cliente(Nodo_clientes* Lista_clientes, char *dni)//Return el valor de la posicion del cliente que estamos buscando
 {
     Nodo_clientes *p;
     p=Lista_clientes;
@@ -65,3 +84,4 @@ Nodo_clientes* buscar_cliente(Nodo_clientes* Lista_clientes, char *dni)//Return 
     }
     return p;
 }
+*/
