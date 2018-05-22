@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "alta.h"
 #include "mostrar.h"
-
+#include "baja.h"
 void menu(){
 
 
@@ -24,11 +24,13 @@ case 1:
     alta_cliente();
     break;
 case 2:
+    baja_clientes();
     break;
 case 3:
     alta_viajes();
     break;
 case 4:
+    baja_viajes();
     break;
 case 5:
     imprimir();

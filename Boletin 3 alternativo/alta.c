@@ -19,7 +19,7 @@ int buscar_cliente(char *dni)//Return el valor de la posicion del cliente que es
 {
     int i=0;
     int comparacion=0;
-    while(lista->siguiente != NULL)
+    while(lista->siguiente != NULL || i==0)
     {
         comparacion=strcmp(dni,lista->dni);
         if( comparacion == 0)
