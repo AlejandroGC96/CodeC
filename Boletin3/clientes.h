@@ -8,17 +8,13 @@ typedef struct cliente{
     char *nombre;
     char *apellidos;
     char *direccion;
-    Lista_viajes viajes;
+    int contador_viajes;
+    struct viajes *listaviajes;
+    struct cliente *siguiente;
+    struct cliente *anterior;
 
-}clientes;
+}lclientes;
 
-typedef struct Nodo_clientes{
 
-    clientes *clientes;
-    struct Nodo_clientes* siguiente;
-
-}Nodo_clientes;
-
-typedef struct Nodo_clientes *Lista_clientes;
 
 #endif // CLIENTES_H_INCLUDED

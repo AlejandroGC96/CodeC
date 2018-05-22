@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Boletin3" />
+		<Option title="Tarea3" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Boletin3" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Tarea3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Boletin3" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Tarea3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,26 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="estructuras.h" />
-		<Unit filename="funciones_cliente.c">
+		<Unit filename="cliente.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="funciones_cliente.h" />
-		<Unit filename="funciones_cliente_auxiliares.c">
+		<Unit filename="cliente.h" />
+		<Unit filename="imprimir.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="funciones_cliente_auxiliares.h" />
-		<Unit filename="funciones_viajes.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="funciones_viajes.h" />
-		<Unit filename="funciones_viajes_auxiliares.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="funciones_viajes_auxiliares.h" />
+		<Unit filename="imprimir.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="structs.h" />
+		<Unit filename="viaje.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="viaje.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
