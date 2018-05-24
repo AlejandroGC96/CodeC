@@ -4,9 +4,10 @@
 typedef struct nodo_arbol
 {
     char *nombre;
-    int numero;                       /* Campo donde almacenaremos el valor */
-    struct nodo_arbol *izq;    /* Puntero al hijo izquierdo */
-    struct nodo_arbol *der;      /* Puntero al hijo derecho */
+    int numero;
+    struct nodo_arbol *izq;
+    struct nodo_arbol *der;
+
 }NODO_ARBOL, *P_NODO_ARBOL;
 
 
