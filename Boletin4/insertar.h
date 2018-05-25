@@ -3,6 +3,6 @@
 #include "arbol.h"
 
 P_NODO_ARBOL insertar(P_NODO_ARBOL);
-P_NODO_ARBOL insertar_recursivo(P_NODO_ARBOL p, P_NODO_ARBOL arbol, char *nombre);
+P_NODO_ARBOL insertar_recursivo(P_NODO_ARBOL arbol, char *nombre, int numero);
 
 #endif // INSERTAR_H_INCLUDED
