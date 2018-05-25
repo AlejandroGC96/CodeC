@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="arbol.h" />
+		<Unit filename="insertar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="insertar.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -15,7 +15,7 @@ if(strcmp(arbol->nombre,nombre)==0){
 
 }
 
-if((strcmp(arbol->nombre, nombre)>0)){
+if((strcmp(arbol->nombre, nombre))>0){
 
 
    arbol->izq = insertar_recursivo(p,arbol->izq, nombre);
@@ -60,23 +60,24 @@ if(arbol==NULL){
 
 }
 
-if((strcmp(arbol->nombre,nombre)==0)){
+if(((strcmp(arbol->nombre,nombre))==0)){
 
     printf("El valor ya esta en el arbol");
     return p;
 
 }
 
-if((strcmp(arbol->nombre, nombre)>0){
+
+if((strcmp(arbol->nombre, nombre))>0){
 
 
    arbol->izq = insertar_recursivo(p,arbol->izq, nombre);
 
 
-   }else arbol-> der =insertar_recursivo(p,arbol->der, nombre);
+   }else
+   arbol-> der = insertar_recursivo(p,arbol->der, nombre);
 
 return arbol;
-
 }
 
 
