@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "insertar.h"
 #include "arbol.h"
+#include "buscar.h"
 
 void menu()
 {
@@ -24,6 +25,7 @@ void menu()
             arbol = insertar(arbol);
             break;
         case 2:
+            printf("Contacto : %s\n",buscar(arbol)->nombre);
             break;
 
 
