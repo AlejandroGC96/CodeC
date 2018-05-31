@@ -36,6 +36,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="buscar.h" />
+		<Unit filename="grafos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="grafos.h" />
 		<Unit filename="insertar.c">
 			<Option compilerVar="CC" />
 		</Unit>
