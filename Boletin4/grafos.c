@@ -8,6 +8,7 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
 
     char *variable,*variable_auxiliar;
     int i=0;
+    fpos_t posicion;
     FILE *fichero;
 
     if ((fichero = fopen("carreteras.txt", "r")) == NULL)
@@ -28,11 +29,27 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
         fgets (variable,10000,fichero);
         fgets (variable,10000,fichero);
         fgets (variable,10000,fichero);
+        fgetpos(fichero,&posicion);
+
+        /*fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+        fgets (variable,10000,fichero);
+*/
 
         while((strlen(variable))!= i){
 
-              fscanf(fichero,"%s",variable_auxiliar);
-                 variable[strlen(variable_auxiliar) - 1] = '\0';
+        if(i==0)
+            fsetpos(fichero, &posicion);
+
+        fscanf(fichero,"%s",variable_auxiliar);
+        variable_auxiliar[strlen(variable_auxiliar) - 1] = '\0';
+        printf("%s",variable_auxiliar);
                 i++;
 
               }
