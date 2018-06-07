@@ -1,14 +1,6 @@
 #Lista ciudades
-
-
-
 Coruña, Vigo, Valladolid, Oviedo, Bilbao, Zaragoza, Gerona, Barcelona, Madrid, Badajoz, Albacete, Valencia, Murcia, Jaén, Sevilla, Granada, Cádiz
-
-
-
 #Distancias entre ciudades
-
-
 
 Coruña Vigo 171
 

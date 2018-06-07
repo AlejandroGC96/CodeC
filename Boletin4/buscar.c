@@ -7,7 +7,7 @@ P_NODO_ARBOL buscar_recursivo(P_NODO_ARBOL arbol, char* nombre){
 
 
 
-  if (arbol == NULL)    /* Arbol vacÌo por tanto devuelve NULL */
+  if (arbol == NULL)    /*Arbol vacÌo por tanto devuelve NULL*/
         return (NULL);
 
     if (arbol->nombre == nombre)    /* Hemos encontrado el valor */

@@ -35,9 +35,10 @@ void menu()
             printf("Telefono : %d\n",buscar(arbol)->numero);
             break;
         case 3:
-            cargar(n, aux_origen, aux_destino);
+            n = cargar(n, aux_origen, aux_destino);
             break;
         case 4:
+            listarNodos(n);
 
             break;
 
