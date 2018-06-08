@@ -10,6 +10,8 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
     fpos_t posicion = 16;
     int i=0;
     FILE *fichero;
+   // aux_origen=(P_NODO) malloc(sizeof (NODO));
+   // aux_destino=(P_NODO) malloc(sizeof (NODO));
 
     if ((fichero = fopen("carreteras.txt", "r")) == NULL)
     {
@@ -22,7 +24,7 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
 
     fsetpos(fichero, &posicion);
 
-    while(posicion<137)
+    while(posicion<161)
     {
 
         fscanf(fichero,"%s",variable_auxiliar);
@@ -42,10 +44,14 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
         fscanf(fichero,"%s",variable_auxiliar);
         printf("Ciudad inicial : %s\n",variable_auxiliar);
         aux_origen=buscar_grafo(n, variable_auxiliar);
+        if(aux_origen==NULL)
+            return n;
 
         fscanf(fichero,"%s",variable_auxiliar);
         printf("Ciudad destino : %s\n",variable_auxiliar);
         aux_destino=buscar_grafo(n, variable_auxiliar);
+        if(aux_destino==NULL)
+                return n;
 
         fscanf(fichero,"%d",&i);
         printf("Distansia : %d\n",i);
@@ -53,6 +59,8 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
         printf("------------\n");
     }
     fclose(fichero);
+
+    printf("Archivo cargado");
     return n;
 }
 
@@ -64,6 +72,7 @@ P_NODO nuevo(P_NODO n, char *nombre_ciudad)
     if(buscar_grafo(n, nombre_ciudad) == NULL)
     {
         P_NODO paux = (P_NODO) malloc(sizeof (NODO));
+
         paux->nombre_ciudad = malloc(150*sizeof(char));
         strcpy(paux->nombre_ciudad, nombre_ciudad);
         paux->apunta = NULL;
@@ -93,7 +102,7 @@ P_NODO buscar_grafo(P_NODO n, char *nombre_ciudad)
     P_NODO paux = n;
     while (paux != NULL)
     {
-        if(paux->nombre_ciudad == nombre_ciudad)
+        if(strcmp(paux->nombre_ciudad,nombre_ciudad)==0)
         {
             return paux;
         }
@@ -123,6 +132,7 @@ void arco(P_NODO origen, P_NODO destino, int distancia){
     paux->sgte = origen->apunta;
     origen->apunta = paux;
     paux->distancia = distancia;
+
 }
 
 
