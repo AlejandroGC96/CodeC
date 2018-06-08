@@ -9,11 +9,13 @@ void menu()
 {
 
     int opcion = 0;
+    int nNodos = 0;
+
     P_NODO_ARBOL arbol = NULL;
 
     P_NODO n = NULL;
-    P_NODO aux_origen, aux_destino;
-
+    P_NODO aux_origen=NULL, aux_destino=NULL;
+    P_NODO FINAL = NULL;
     do
     {
         printf("###Menu###\n");
@@ -38,7 +40,9 @@ void menu()
             n = cargar(n, aux_origen, aux_destino);
             break;
         case 4:
-            listarNodos(n);
+            listarNodos(n, &nNodos);
+            listarArcos(n);
+            mas_corto(n, FINAL);
 
             break;
 

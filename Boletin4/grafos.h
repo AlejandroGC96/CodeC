@@ -20,9 +20,10 @@ typedef struct nodo
 
 P_NODO buscar_grafo(P_NODO n, char *nombre_ciudad);
 P_NODO nuevo(P_NODO n, char *nombre_ciudad);
-void listarNodos(P_NODO n);
+void listarNodos(P_NODO n, int *nNodos);
+void listarArcos(P_NODO n);
 void arco(P_NODO origen, P_NODO destino, int distancia);
 P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino);
-
+P_NODO mas_corto(P_NODO n, P_NODO FINAL);
 
 #endif // GRAFOS_H_INCLUDED

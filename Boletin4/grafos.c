@@ -10,8 +10,8 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
     fpos_t posicion = 16;
     int i=0;
     FILE *fichero;
-   // aux_origen=(P_NODO) malloc(sizeof (NODO));
-   // aux_destino=(P_NODO) malloc(sizeof (NODO));
+    // aux_origen=(P_NODO) malloc(sizeof (NODO));
+    // aux_destino=(P_NODO) malloc(sizeof (NODO));
 
     if ((fichero = fopen("carreteras.txt", "r")) == NULL)
     {
@@ -51,7 +51,7 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
         printf("Ciudad destino : %s\n",variable_auxiliar);
         aux_destino=buscar_grafo(n, variable_auxiliar);
         if(aux_destino==NULL)
-                return n;
+            return n;
 
         fscanf(fichero,"%d",&i);
         printf("Distansia : %d\n",i);
@@ -60,7 +60,7 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
     }
     fclose(fichero);
 
-    printf("Archivo cargado");
+    printf("Archivo cargado...\n");
     return n;
 }
 
@@ -113,7 +113,7 @@ P_NODO buscar_grafo(P_NODO n, char *nombre_ciudad)
     }
     return NULL;
 }
-void listarNodos(P_NODO n)
+void listarNodos(P_NODO n, int *nNodos)
 {
 
     P_NODO paux = n;
@@ -122,9 +122,11 @@ void listarNodos(P_NODO n)
     {
         printf("Nodo: %s\n", paux->nombre_ciudad);
         paux = paux->sgte;
+        *nNodos=*nNodos+1;
     }
 }
-void arco(P_NODO origen, P_NODO destino, int distancia){
+void arco(P_NODO origen, P_NODO destino, int distancia)
+{
 
     P_ARCO paux = (P_ARCO) malloc(sizeof (ARCO));
 
@@ -134,5 +136,112 @@ void arco(P_NODO origen, P_NODO destino, int distancia){
     paux->distancia = distancia;
 
 }
+void listarArcos(P_NODO n)
+{
 
 
+    P_ARCO arc;
+    P_NODO paux = n;
+    if(paux == NULL)
+    {
+        printf("\n***El nodo no existe");
+    }
+    else
+    {
+        while (paux!= NULL)
+        {
+            printf("\nNodo: %s", paux->nombre_ciudad);
+            arc=paux->apunta;
+            while (arc != NULL)
+            {
+                printf("-> arco: %s ", arc->apunta->nombre_ciudad);
+                arc = arc-> sgte;
+            }
+            paux = paux->sgte;
+        }
+    }
+}
+
+
+
+P_NODO mas_corto(P_NODO n, P_NODO FINAL)
+{
+    P_ARCO arc, aux_arc;
+
+    P_NODO paux = n;
+
+    while(paux!= NULL)
+    {
+        arc=paux->apunta;
+        while(arc != NULL)
+        {
+            // Inicializamos con el coste de los caminos directos
+            aux_arc = arc;
+            FINAL = -1;
+            arc = arc-> sgte;
+        }
+        paux = paux->sgte;
+    }
+    paux=n;
+
+    while (paux!=NULL)
+    {
+        arc=paux->apunta;
+        while(arc!= NULL)
+        {
+            aux_arc=paux->apunta;
+            while(aux_arc != NULL)
+            {
+                if (aux_arc->distancia+arc->distancia < aux_arc->distancia)
+                {
+                    aux_arc->distancia = aux_arc->distancia+arc->distancia ;
+                    FINAL = paux;
+                }
+                aux_arc = aux_arc-> sgte;
+            }
+            arc = arc-> sgte;
+        }
+        paux = paux->sgte;
+
+    }
+    return FINAL;
+}
+/*
+void camino (P_NODO FINAL)
+{
+    char *nombre_ciudad;
+    nombre_ciudad = malloc(150*sizeof(char));
+    printf("\nIntroduce el nombre del nodo: ");
+    scanf("%s", nombre_ciudad);
+     fflush(stdin);
+
+    P_ARCO arc;
+    P_NODO paux = buscar_grafo(FINAL, nombre_ciudad);
+    if(paux == NULL){
+            printf("\n***El nodo no existe");
+    }else{
+         printf("\nIntroduce el nombre del nodo: ");
+        scanf("%s", nombre_ciudad);
+        fflush(stdin);
+        P_NODO paux2 = buscar_grafo(FINAL, nombre_ciudad);
+
+         if(paux2 == NULL){
+            printf("\n***El nodo no existe");
+         }else {
+
+       if()
+        arc=paux->apunta;
+        while (arc != NULL) {
+            printf("-> arco: %c ", arc->apunta->nombre);
+            arc = arc-> sgte;
+        }
+    }
+    }
+    int k;
+    if ((k=P[i][j])== -1)
+        return;
+    camino(i,k);
+    printf(Åg%d Åg,k);
+    camino(k,j);
+}
+*/
