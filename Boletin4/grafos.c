@@ -10,8 +10,6 @@ P_NODO cargar(P_NODO n, P_NODO aux_origen, P_NODO aux_destino)
     fpos_t posicion = 16;
     int i=0;
     FILE *fichero;
-    // aux_origen=(P_NODO) malloc(sizeof (NODO));
-    // aux_destino=(P_NODO) malloc(sizeof (NODO));
 
     if ((fichero = fopen("carreteras.txt", "r")) == NULL)
     {

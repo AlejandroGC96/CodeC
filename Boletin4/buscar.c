@@ -15,7 +15,7 @@ P_NODO_ARBOL buscar_recursivo(P_NODO_ARBOL arbol, char* nombre){
     else if (arbol->nombre > nombre)    /* El valor actual es mayor que ir por tanto
                                    vamos hacia la izquierda */
         return(buscar_recursivo(arbol->izq, nombre));
-    else    /* "i" es mayor que el valor actual */
+    else
         return(buscar_recursivo(arbol->der, nombre));
 
 
@@ -46,7 +46,7 @@ fflush(stdin);
     else if (strcmp(arbol->nombre, nombre)>0)    /* El valor actual es mayor que ir por tanto
                                    vamos hacia la izquierda */
         return(buscar_recursivo(arbol->izq, nombre));
-    else    /* "i" es mayor que el valor actual */
+    else
         return(buscar_recursivo(arbol->der, nombre));
 
 

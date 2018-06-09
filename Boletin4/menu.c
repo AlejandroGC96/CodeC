@@ -32,6 +32,7 @@ void menu()
 
         case 1:
             arbol = insertar(arbol);
+
             break;
         case 2:
             printf("Telefono : %d\n",buscar(arbol)->numero);

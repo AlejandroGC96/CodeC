@@ -42,8 +42,6 @@ if((strcmp(arbol->nombre, nombre))>0){
 
 return arbol;
 
-
-
 }
 
 
@@ -71,7 +69,7 @@ if(arbol==NULL){
     p->der = NULL;
     strcpy(p->nombre, nombre);
     p->numero = numero;
-
+    printf("Nodo creado\n");
     return p;
 
 }
@@ -92,6 +90,7 @@ if((strcmp(arbol->nombre, nombre))>0){
 
    }else
    arbol-> der = insertar_recursivo( arbol->der, nombre, numero);
+    printf("Nodo creado\n");
 
 return arbol;
 }
